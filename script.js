@@ -225,37 +225,120 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== CURSOR GLOW EFFECT =====
-const createCursorGlow = () => {
-    const glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    glow.style.cssText = `
+// ===== CUSTOM CURSOR (REPLACED OLD CURSOR GLOW) =====
+if (window.innerWidth > 768) {
+    // Remove default cursor
+    document.body.style.cursor = 'none';
+    
+    // Create cursor elements
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    cursor.style.cssText = `
         position: fixed;
         width: 20px;
         height: 20px;
+        border: 2px solid #8B5CF6;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent);
         pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.1s ease;
-        display: none;
+        z-index: 99999;
+        transition: all 0.1s ease;
+        transform: translate(-50%, -50%);
     `;
-    document.body.appendChild(glow);
-    
-    document.addEventListener('mousemove', (e) => {
-        glow.style.display = 'block';
-        glow.style.left = e.clientX - 10 + 'px';
-        glow.style.top = e.clientY - 10 + 'px';
-    });
-    
-    document.addEventListener('mouseleave', () => {
-        glow.style.display = 'none';
-    });
-};
+    document.body.appendChild(cursor);
 
-// Only enable cursor glow on desktop
-if (window.innerWidth > 768) {
-    createCursorGlow();
+    const cursorDot = document.createElement('div');
+    cursorDot.style.cssText = `
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4px;
+        height: 4px;
+        background: #8B5CF6;
+        border-radius: 50%;
+    `;
+    cursor.appendChild(cursorDot);
+
+    const follower = document.createElement('div');
+    follower.className = 'cursor-follower';
+    follower.style.cssText = `
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #8B5CF6;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transition: all 0.3s ease;
+        opacity: 0.5;
+        transform: translate(-50%, -50%);
+    `;
+    document.body.appendChild(follower);
+
+    let mouseX = 0, mouseY = 0;
+    let followerX = 0, followerY = 0;
+
+    // Update cursor position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+
+    // Smooth follower animation
+    function animateFollower() {
+        const distX = mouseX - followerX;
+        const distY = mouseY - followerY;
+        
+        followerX += distX * 0.1;
+        followerY += distY * 0.1;
+        
+        follower.style.left = followerX + 'px';
+        follower.style.top = followerY + 'px';
+        
+        requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+
+    // Hover effect on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .contact-card, input, textarea');
+    
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.width = '50px';
+            cursor.style.height = '50px';
+            cursor.style.background = 'rgba(139, 92, 246, 0.1)';
+            cursor.style.borderColor = '#EC4899';
+            follower.style.width = '60px';
+            follower.style.height = '60px';
+            follower.style.borderColor = '#EC4899';
+            follower.style.opacity = '0.8';
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            cursor.style.width = '20px';
+            cursor.style.height = '20px';
+            cursor.style.background = 'transparent';
+            cursor.style.borderColor = '#8B5CF6';
+            follower.style.width = '40px';
+            follower.style.height = '40px';
+            follower.style.borderColor = '#8B5CF6';
+            follower.style.opacity = '0.5';
+        });
+    });
+
+    // Click effect
+    document.addEventListener('mousedown', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    });
+
+    document.addEventListener('mouseup', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+    
+    console.log('✅ Custom cursor loaded!');
 }
 
 // ===== SKILL CARD HOVER EFFECT =====
@@ -406,66 +489,7 @@ if (automationBtn) {
     });
 }
 
-// ===== CUSTOM CURSOR =====
-if (window.innerWidth > 768) {
-    // Create cursor elements
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    document.body.appendChild(cursor);
-
-    const follower = document.createElement('div');
-    follower.className = 'cursor-follower';
-    document.body.appendChild(follower);
-
-    let mouseX = 0, mouseY = 0;
-    let followerX = 0, followerY = 0;
-
-    // Update cursor position
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top = mouseY + 'px';
-    });
-
-    // Smooth follower animation
-    function animateFollower() {
-        const distX = mouseX - followerX;
-        const distY = mouseY - followerY;
-        
-        followerX += distX * 0.1;
-        followerY += distY * 0.1;
-        
-        follower.style.left = followerX + 'px';
-        follower.style.top = followerY + 'px';
-        
-        requestAnimationFrame(animateFollower);
-    }
-    animateFollower();
-
-    // Hover effect on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .contact-card');
-    
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            document.body.classList.add('cursor-hover');
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            document.body.classList.remove('cursor-hover');
-        });
-    });
-
-    // Click effect
-    document.addEventListener('mousedown', () => {
-        document.body.classList.add('cursor-click');
-    });
-
-    document.addEventListener('mouseup', () => {
-        document.body.classList.remove('cursor-click');
-    });
-}
+// ===== CUSTOM CURSOR (DUPLICATE REMOVED - USING INLINE STYLES VERSION ABOVE) =====
 
 // ===== SCROLL PROGRESS INDICATOR =====
 const scrollIndicator = document.createElement('div');

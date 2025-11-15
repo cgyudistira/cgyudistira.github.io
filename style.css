@@ -1675,76 +1675,13 @@ body {
     }
 }
 
-/* ===== CUSTOM CURSOR ===== */
-body {
-    cursor: none;
-}
-
-.custom-cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99999;
-    transition: all 0.1s ease;
-    mix-blend-mode: difference;
-}
-
-.custom-cursor::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 4px;
-    height: 4px;
-    background: var(--primary);
-    border-radius: 50%;
-}
-
-.cursor-follower {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--primary);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 99998;
-    transition: all 0.3s ease;
-    opacity: 0.5;
-}
-
-/* Cursor hover effects */
-body.cursor-hover .custom-cursor {
-    width: 50px;
-    height: 50px;
-    background: rgba(139, 92, 246, 0.1);
-    border-color: var(--secondary);
-}
-
-body.cursor-hover .cursor-follower {
-    width: 60px;
-    height: 60px;
-    border-color: var(--secondary);
-    opacity: 0.8;
-}
-
-/* Cursor click effect */
-body.cursor-click .custom-cursor {
-    transform: scale(0.8);
-}
+/* ===== CUSTOM CURSOR (USING INLINE STYLES IN JS) ===== */
+/* Cursor styles are applied via JavaScript for better control */
 
 /* Hide custom cursor on mobile */
 @media (max-width: 768px) {
     body {
-        cursor: auto;
-    }
-    
-    .custom-cursor,
-    .cursor-follower {
-        display: none;
+        cursor: auto !important;
     }
 }
 
