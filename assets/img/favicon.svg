@@ -1,17 +1,18 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
   <rect width="64" height="64" rx="12" fill="url(#bgGrad)"/>
-  <!-- C shape -->
-  <path d="M42 32C42 37.5228 37.5228 42 32 42C26.4772 42 22 37.5228 22 32C22 26.4772 26.4772 22 32 22C34.7614 22 37.2614 23.2386 39 25.1429" stroke="url(#gradient)" stroke-width="6" stroke-linecap="round"/>
-  <!-- AI text -->
-  <text x="38" y="38" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="url(#gradient)">AI</text>
-  <!-- Dot -->
-  <circle cx="50" cy="42" r="2.5" fill="url(#gradient)"/>
+  
+  <!-- C shape - white -->
+  <path d="M42 32C42 37.5228 37.5228 42 32 42C26.4772 42 22 37.5228 22 32C22 26.4772 26.4772 22 32 22C34.7614 22 37.2614 23.2386 39 25.1429" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- AI text - white -->
+  <text x="38" y="38" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="white">AI</text>
+  
+  <!-- Dot - white -->
+  <circle cx="50" cy="42" r="2.5" fill="white"/>
+  
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1A1A2E"/>
-      <stop offset="100%" stop-color="#0A0A14"/>
-    </linearGradient>
-    <linearGradient id="gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#8B5CF6"/>
       <stop offset="100%" stop-color="#EC4899"/>
     </linearGradient>

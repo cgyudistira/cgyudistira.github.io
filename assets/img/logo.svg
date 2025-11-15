@@ -1,25 +1,21 @@
 <svg width="220" height="40" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background box -->
+  <!-- Background box with gradient -->
   <rect x="2" y="2" width="36" height="36" rx="8" fill="url(#bgGrad)"/>
   
-  <!-- C shape -->
-  <path d="M28 20C28 23.3137 25.3137 26 22 26C18.6863 26 16 23.3137 16 20C16 16.6863 18.6863 14 22 14C23.6569 14 25.1569 14.6863 26.2 15.7857" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round"/>
+  <!-- C shape - white -->
+  <path d="M28 20C28 23.3137 25.3137 26 22 26C18.6863 26 16 23.3137 16 20C16 16.6863 18.6863 14 22 14C23.6569 14 25.1569 14.6863 26.2 15.7857" stroke="white" stroke-width="3" stroke-linecap="round"/>
   
-  <!-- AI text in box -->
-  <text x="26" y="25" font-family="Inter, sans-serif" font-size="8" font-weight="800" fill="url(#logoGrad)">AI</text>
+  <!-- AI text in box - white -->
+  <text x="26" y="25" font-family="Inter, sans-serif" font-size="8" font-weight="800" fill="white">AI</text>
   
-  <!-- Dot -->
-  <circle cx="33" cy="26" r="1.5" fill="url(#logoGrad)"/>
+  <!-- Dot - white -->
+  <circle cx="33" cy="26" r="1.5" fill="white"/>
   
-  <!-- Text -->
+  <!-- Text with gradient -->
   <text x="48" y="28" font-family="'Courier New', monospace" font-size="18" font-weight="600" fill="url(#textGrad)">&lt;/cgyudistira&gt;</text>
   
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1A1A2E"/>
-      <stop offset="100%" stop-color="#0A0A14"/>
-    </linearGradient>
-    <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#8B5CF6"/>
       <stop offset="100%" stop-color="#EC4899"/>
     </linearGradient>
