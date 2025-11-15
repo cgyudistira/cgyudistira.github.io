@@ -1,0 +1,15 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="36" height="36" rx="8" fill="url(#logoGrad)" stroke="url(#logoGrad)" stroke-width="2"/>
+  <path d="M20 12L23 18L29 19L24.5 23.5L25.5 29.5L20 26.5L14.5 29.5L15.5 23.5L11 19L17 18L20 12Z" fill="white"/>
+  <text x="48" y="28" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#textGrad)">cgyudistira</text>
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="48" y1="10" x2="120" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+</svg>
