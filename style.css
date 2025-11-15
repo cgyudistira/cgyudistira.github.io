@@ -82,15 +82,19 @@ body {
 .brand-logo-img {
     height: 40px;
     width: auto;
-    max-width: 150px;
+    max-width: 200px;
     object-fit: contain;
-    display: inline-flex;
+}
+
+/* Hide icon and text when logo image is loaded */
+.nav-brand.has-logo .brand-icon,
+.nav-brand.has-logo .brand-text {
+    display: none;
 }
 
 .brand-icon {
     font-size: 1.5rem;
     animation: pulse 2s ease-in-out infinite;
-    display: none;
 }
 
 .brand-text {
@@ -1020,9 +1024,14 @@ body {
 .footer-logo-img {
     height: 40px;
     width: auto;
-    max-width: 150px;
+    max-width: 200px;
     object-fit: contain;
-    display: inline-flex;
+}
+
+/* Hide icon and text when logo image is loaded in footer */
+.brand-logo.has-logo .brand-icon,
+.brand-logo.has-logo > span:not([class]) {
+    display: none;
 }
 
 .footer-brand p {
