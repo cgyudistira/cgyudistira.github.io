@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cokorda Gede Yudistira Putra - Data Scientist, AI Specialist, Credit Risk Expert">
-    <title>Cokorda Gede Yudistira Putra | Data Scientist</title>
+    <title>Cokorda Gede Yudistira Putra | AI & Data Science Expert</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">cgyudistira</div>
+            <div class="nav-brand">
+                <span class="brand-icon">⚡</span>
+                <span>cgyudistira</span>
+            </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#skills">Expertise</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -32,26 +38,104 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Cokorda Gede Yudistira Putra</h1>
-            <p class="hero-subtitle">Data Scientist · AI Specialist · Credit Risk Expert</p>
-            <a href="#about" class="cta-button">Explore More</a>
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
         </div>
-        <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for Projects
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Cokorda Gede</span>
+                <span class="title-line gradient-text">Yudistira Putra</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typing-text">Data Scientist</span>
+                <span class="separator">·</span>
+                <span class="typing-text">AI Specialist</span>
+                <span class="separator">·</span>
+                <span class="typing-text">Credit Risk Expert</span>
+            </p>
+            <p class="hero-description">
+                Transforming data into intelligent solutions with 12+ years of expertise in AI-driven decision systems
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get In Touch</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">35%</div>
+                    <div class="stat-label">Accuracy Improvement</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a Data Scientist with 12+ years of experience in banking, credit risk analysis, and AI-driven decision systems. I combine data, technology, and business insights to build intelligent solutions that drive real impact.</p>
-                    <p>My expertise spans across machine learning, predictive modeling, and advanced analytics, helping organizations make data-driven decisions that transform their business operations.</p>
+            <div class="section-header">
+                <span class="section-tag">Who I Am</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <div class="image-placeholder">
+                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                                <circle cx="100" cy="100" r="80" stroke="url(#gradient1)" stroke-width="2"/>
+                                <circle cx="100" cy="100" r="60" stroke="url(#gradient1)" stroke-width="2" opacity="0.5"/>
+                                <circle cx="100" cy="100" r="40" stroke="url(#gradient1)" stroke-width="2" opacity="0.3"/>
+                                <defs>
+                                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#8B5CF6"/>
+                                        <stop offset="100%" style="stop-color:#EC4899"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="ai-icon">🤖</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="about-lead">I am a Data Scientist with 12+ years of experience in banking, credit risk analysis, and AI-driven decision systems.</p>
+                    <p>I combine data, technology, and business insights to build intelligent solutions that drive real impact. My expertise spans across machine learning, predictive modeling, and advanced analytics, helping organizations make data-driven decisions that transform their business operations.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎯</div>
+                            <div class="highlight-content">
+                                <h4>Mission-Driven</h4>
+                                <p>Focused on creating AI solutions that solve real-world problems</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">💡</div>
+                            <div class="highlight-content">
+                                <h4>Innovation First</h4>
+                                <p>Always exploring cutting-edge technologies and methodologies</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,81 +144,223 @@
     <!-- Skills Section -->
     <section id="skills" class="skills section">
         <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="section-header">
+                <span class="section-tag">What I Do</span>
+                <h2 class="section-title">Skills & Expertise</h2>
+            </div>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon">📊</div>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect x="5" y="25" width="8" height="10" fill="url(#skillGrad1)"/>
+                                <rect x="16" y="15" width="8" height="20" fill="url(#skillGrad1)"/>
+                                <rect x="27" y="10" width="8" height="25" fill="url(#skillGrad1)"/>
+                            </svg>
+                        </div>
+                        <div class="skill-badge">Core</div>
+                    </div>
                     <h3>Data Science</h3>
                     <p>Advanced analytics and statistical modeling to extract insights from complex datasets</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 95%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="8" fill="url(#skillGrad1)"/>
+                                <circle cx="10" cy="15" r="4" fill="url(#skillGrad1)" opacity="0.6"/>
+                                <circle cx="30" cy="15" r="4" fill="url(#skillGrad1)" opacity="0.6"/>
+                                <circle cx="10" cy="25" r="4" fill="url(#skillGrad1)" opacity="0.6"/>
+                                <circle cx="30" cy="25" r="4" fill="url(#skillGrad1)" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div class="skill-badge">Expert</div>
+                    </div>
                     <h3>Machine Learning</h3>
                     <p>Building predictive models and intelligent systems using cutting-edge ML algorithms</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 92%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">⚡</div>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M20 5L25 15L35 15L27 22L30 32L20 26L10 32L13 22L5 15L15 15L20 5Z" fill="url(#skillGrad1)"/>
+                            </svg>
+                        </div>
+                        <div class="skill-badge">Advanced</div>
+                    </div>
                     <h3>AI Automation</h3>
                     <p>Developing automated solutions that streamline processes and enhance efficiency</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 88%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">💳</div>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect x="8" y="8" width="24" height="24" rx="4" fill="url(#skillGrad1)" opacity="0.3"/>
+                                <path d="M15 20L18 23L25 16" stroke="url(#skillGrad1)" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="skill-badge">Specialist</div>
+                    </div>
                     <h3>Credit Risk Modeling</h3>
                     <p>Specialized in credit scoring, risk assessment, and portfolio management</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 90%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">📈</div>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M5 30L10 20L15 25L20 15L25 20L30 10L35 15" stroke="url(#skillGrad1)" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="skill-badge">Pro</div>
+                    </div>
                     <h3>Dashboard Analytics</h3>
                     <p>Creating interactive visualizations and business intelligence dashboards</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 87%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🔧</div>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="12" stroke="url(#skillGrad1)" stroke-width="2"/>
+                                <path d="M20 12V20L26 23" stroke="url(#skillGrad1)" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="skill-badge">Expert</div>
+                    </div>
                     <h3>Process Optimization</h3>
                     <p>Improving operational efficiency through data-driven process improvements</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 85%"></div>
+                    </div>
                 </div>
             </div>
+            <svg width="0" height="0">
+                <defs>
+                    <linearGradient id="skillGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#8B5CF6"/>
+                        <stop offset="100%" style="stop-color:#EC4899"/>
+                    </linearGradient>
+                </defs>
+            </svg>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
             <div class="projects-grid">
                 <div class="project-card">
+                    <div class="project-number">01</div>
                     <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-icon">🎯</span>
-                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-icon-large">🎯</div>
                     </div>
                     <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Risk Analysis</span>
+                        </div>
                         <h3>AI Credit Scoring Model</h3>
-                        <p>Developed an advanced machine learning model for credit risk assessment, improving accuracy by 35% and reducing default rates.</p>
-                        <a href="#" class="project-link">View Project →</a>
+                        <p>Developed an advanced machine learning model for credit risk assessment, improving accuracy by 35% and reducing default rates significantly.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">35%</span>
+                                <span class="metric-label">Accuracy Boost</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">$2M+</span>
+                                <span class="metric-label">Cost Saved</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>View Case Study</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="project-number">02</div>
                     <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-icon">📊</span>
-                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-icon-large">📊</div>
                     </div>
                     <div class="project-content">
-                        <h3>Sales Forecasting with Machine Learning</h3>
-                        <p>Built a predictive analytics system for sales forecasting using time series analysis and ensemble methods.</p>
-                        <a href="#" class="project-link">View Project →</a>
+                        <div class="project-tags">
+                            <span class="tag">Time Series</span>
+                            <span class="tag">Forecasting</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                        <h3>Sales Forecasting with ML</h3>
+                        <p>Built a predictive analytics system for sales forecasting using time series analysis and ensemble methods for accurate predictions.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">92%</span>
+                                <span class="metric-label">Accuracy</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Time Saved</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>View Case Study</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="project-number">03</div>
                     <div class="project-image">
-                        <div class="project-overlay">
-                            <span class="project-icon">💼</span>
-                        </div>
+                        <div class="project-gradient"></div>
+                        <div class="project-icon-large">💼</div>
                     </div>
                     <div class="project-content">
-                        <h3>Credit Portfolio Monitoring Dashboard</h3>
-                        <p>Created an interactive real-time dashboard for monitoring credit portfolio performance and risk metrics.</p>
-                        <a href="#" class="project-link">View Project →</a>
+                        <div class="project-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Real-time</span>
+                            <span class="tag">BI</span>
+                        </div>
+                        <h3>Credit Portfolio Dashboard</h3>
+                        <p>Created an interactive real-time dashboard for monitoring credit portfolio performance and risk metrics with advanced visualizations.</p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">Real-time</span>
+                                <span class="metric-label">Updates</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">15+</span>
+                                <span class="metric-label">KPIs Tracked</span>
+                            </div>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>View Case Study</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -144,30 +370,95 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-intro">I'm always open to discussing new projects, opportunities, or collaborations.</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <a href="mailto:cokorda@gmail.com">cokorda@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">💼</span>
-                        <a href="https://linkedin.com/in/cgyudistira" target="_blank">linkedin.com/in/cgyudistira</a>
+            <div class="section-header">
+                <span class="section-tag">Let's Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-content">
+                    <p class="contact-intro">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <div class="contact-cards">
+                        <a href="mailto:cokorda@gmail.com" class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <rect x="4" y="8" width="24" height="16" rx="2" stroke="url(#contactGrad)" stroke-width="2"/>
+                                    <path d="M4 10L16 18L28 10" stroke="url(#contactGrad)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Email</h4>
+                                <p>cokorda@gmail.com</p>
+                            </div>
+                            <div class="contact-card-arrow">→</div>
+                        </a>
+                        <a href="https://linkedin.com/in/cgyudistira" target="_blank" class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <rect x="6" y="6" width="20" height="20" rx="2" stroke="url(#contactGrad)" stroke-width="2"/>
+                                    <path d="M11 14V22M11 11V11.01M16 22V17M16 17V14M16 17C16 14 21 14 21 17V22" stroke="url(#contactGrad)" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>LinkedIn</h4>
+                                <p>linkedin.com/in/cgyudistira</p>
+                            </div>
+                            <div class="contact-card-arrow">→</div>
+                        </a>
                     </div>
                 </div>
             </div>
+            <svg width="0" height="0">
+                <defs>
+                    <linearGradient id="contactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#8B5CF6"/>
+                        <stop offset="100%" style="stop-color:#EC4899"/>
+                    </linearGradient>
+                </defs>
+            </svg>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Cokorda Gede Yudistira Putra — All Rights Reserved</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <span class="brand-icon">⚡</span>
+                        <span>cgyudistira</span>
+                    </div>
+                    <p>Building intelligent solutions with AI & Data Science</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Expertise</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="https://linkedin.com/in/cgyudistira" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cokorda Gede Yudistira Putra. All Rights Reserved.</p>
+                <div class="footer-social">
+                    <a href="mailto:cokorda@gmail.com" aria-label="Email">📧</a>
+                    <a href="https://linkedin.com/in/cgyudistira" target="_blank" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

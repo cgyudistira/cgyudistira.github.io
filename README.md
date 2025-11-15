@@ -1,11 +1,11 @@
-# Cokorda Gede Yudistira Putra - Personal Website
+# Cokorda Gede Yudistira Putra - AI-Themed Personal Website
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://cgyudistira.github.io)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-Modern, responsive personal website showcasing my expertise as a Data Scientist, AI Specialist, and Credit Risk Expert.
+Modern, futuristic AI-themed personal website showcasing expertise as a Data Scientist, AI Specialist, and Credit Risk Expert with stunning purple gradient design.
 
 ## 🌐 Live Demo
 
@@ -21,19 +21,45 @@ This is my personal portfolio website featuring:
 
 ## ✨ Features
 
-- **Modern Design**: Clean, professional UI with blue gradient theme
-- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- **Smooth Animations**: Fade-in effects, hover transitions, and scroll reveals
-- **Interactive Navigation**: Fixed navbar with smooth scrolling
-- **Mobile Menu**: Hamburger menu for mobile devices
-- **Performance Optimized**: Fast loading and smooth interactions
+- **AI-Themed Design**: Futuristic purple gradient theme with cyberpunk aesthetics
+- **Particle Background**: Interactive particle.js animation system
+- **Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
+- **Advanced Animations**: 
+  - Fade-in scroll reveals
+  - 3D tilt effects on project cards
+  - Typing effect for hero section
+  - Animated counters for statistics
+  - Progress bars for skills
+  - Parallax scrolling effects
+- **Interactive Elements**: 
+  - Gradient orbs with floating animation
+  - Cursor glow effect (desktop only)
+  - Hover transformations
+  - Smooth page transitions
+- **Modern UI Components**:
+  - Glassmorphism cards
+  - Gradient text effects
+  - Custom SVG icons
+  - Animated badges
+- **Performance Optimized**: Fast loading with lazy loading support
 
 ## 🛠️ Technologies Used
 
 - **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with Flexbox and Grid
-- **JavaScript**: Interactive features and animations
-- **Google Fonts**: Poppins font family
+- **CSS3**: 
+  - CSS Grid & Flexbox layouts
+  - CSS Variables for theming
+  - Advanced animations & transitions
+  - Glassmorphism effects
+  - Gradient backgrounds
+- **JavaScript**: 
+  - Intersection Observer API
+  - Particle.js for background effects
+  - Custom scroll animations
+  - Dynamic typing effects
+  - Animated counters
+- **Google Fonts**: Inter font family
+- **Particles.js**: Interactive particle background
 - **GitHub Pages**: Free hosting and deployment
 
 ## 📂 Project Structure
@@ -41,9 +67,12 @@ This is my personal portfolio website featuring:
 ```
 cgyudistira.github.io/
 ├── index.html          # Main HTML file
-├── style.css           # Stylesheet with responsive design
-├── script.js           # JavaScript for interactivity
-└── README.md           # Project documentation
+├── style.css           # Modern AI-themed stylesheet
+├── script.js           # Advanced JavaScript features
+├── assets/
+│   └── img/           # Image assets folder
+│       └── README.md  # Image guidelines
+└── README.md          # Project documentation
 ```
 
 ## 🚀 Quick Start
@@ -82,13 +111,15 @@ The website is automatically deployed via GitHub Pages when changes are pushed t
 - **Tablet**: 768px - 1199px
 - **Mobile**: Below 768px
 
-## 🎨 Color Palette
+## 🎨 Color Palette (AI Theme)
 
-- **Primary Blue**: `#007bff`
-- **Secondary Blue**: `#00d4ff`
-- **Dark**: `#1a1a2e`
-- **Light**: `#f8f9fa`
-- **Text**: `#333333`
+- **Primary Purple**: `#8B5CF6`
+- **Secondary Pink**: `#EC4899`
+- **Accent Cyan**: `#06B6D4`
+- **Dark Background**: `#0A0A14`
+- **Dark Light**: `#1A1A2E`
+- **Text**: `#E5E7EB`
+- **Text Muted**: `#9CA3AF`
 
 ## 📧 Contact
 
@@ -101,9 +132,14 @@ The website is automatically deployed via GitHub Pages when changes are pushed t
 
 ## 🔄 Updates
 
-- **2025-01**: Initial website launch with modern design
-- Responsive layout implementation
-- Interactive features and animations
+- **2025-01-15**: Major redesign with AI theme
+  - Implemented purple gradient color scheme
+  - Added particle.js background animation
+  - Created advanced 3D card effects
+  - Added typing animations and counters
+  - Implemented glassmorphism design
+  - Enhanced mobile responsiveness
+- **2025-01**: Initial website launch
 
 ---
 
