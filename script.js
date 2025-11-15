@@ -42,10 +42,7 @@ function initParticles() {
                 value: 6,
                 random: true,
                 anim: {
-                    enable: true,
-                    speed: 2,
-                    size_min: 4,
-                    sync: false
+                    enable: false
                 }
             },
             line_linked: {
@@ -92,6 +89,30 @@ function initParticles() {
         },
         retina_detect: false
     });
+    
+    // Lock particle size after init
+    setTimeout(() => {
+        if (window.pJSDom && window.pJSDom[0]) {
+            const pJS = window.pJSDom[0].pJS;
+            
+            // Lock size
+            pJS.particles.size.value = 6;
+            pJS.particles.size.anim.enable = false;
+            
+            // Recreate all particles with locked size
+            pJS.particles.array = [];
+            for (let i = 0; i < pJS.particles.number.value; i++) {
+                pJS.particles.array.push(
+                    new pJS.fn.particle(pJS.particles.color, pJS.particles.opacity.value, {
+                        x: Math.random() * pJS.canvas.w,
+                        y: Math.random() * pJS.canvas.h
+                    })
+                );
+            }
+            
+            console.log('✅ Particles size locked at 6px');
+        }
+    }, 1000);
     
     console.log('✅ Particles initialized');
 }
