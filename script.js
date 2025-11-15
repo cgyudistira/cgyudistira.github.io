@@ -11,12 +11,12 @@ window.addEventListener('load', function() {
     }
 });
 
-// ===== OPTIMIZED PARTICLE BACKGROUND =====
+// ===== PARTICLE BACKGROUND =====
 function initParticles() {
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 50,
+                value: 60,
                 density: {
                     enable: true,
                     value_area: 800
@@ -29,23 +29,35 @@ function initParticles() {
                 type: 'circle'
             },
             opacity: {
-                value: 0.6,
-                random: false
+                value: 0.5,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.3,
+                    sync: false
+                }
             },
             size: {
-                value: 8,
-                random: false
+                value: 5,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 2,
+                    size_min: 3,
+                    sync: false
+                }
             },
             line_linked: {
                 enable: true,
-                distance: 200,
+                distance: 150,
                 color: '#8B5CF6',
-                opacity: 0.5,
-                width: 2
+                opacity: 0.4,
+                width: 1.5
             },
             move: {
                 enable: true,
-                speed: 1.5,
+                speed: 2,
                 direction: 'none',
                 random: false,
                 straight: false,
@@ -61,23 +73,27 @@ function initParticles() {
                     mode: 'grab'
                 },
                 onclick: {
-                    enable: false
+                    enable: true,
+                    mode: 'push'
                 },
                 resize: true
             },
             modes: {
                 grab: {
-                    distance: 200,
+                    distance: 140,
                     line_linked: {
-                        opacity: 0.8
+                        opacity: 0.6
                     }
+                },
+                push: {
+                    particles_nb: 4
                 }
             }
         },
-        retina_detect: false
+        retina_detect: true
     });
     
-    console.log('✅ Particles initialized - size: 8px, fixed');
+    console.log('✅ Particles initialized');
 }
 
 // ===== MOBILE MENU =====
