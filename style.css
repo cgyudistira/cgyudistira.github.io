@@ -20,6 +20,7 @@
 
 html {
     scroll-behavior: smooth;
+    background: var(--bg);
 }
 
 body {
@@ -28,6 +29,18 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0A0A14;
+    z-index: -10;
 }
 
 .container {
@@ -39,6 +52,7 @@ body {
 .section {
     padding: 100px 0;
     position: relative;
+    background: var(--bg);
 }
 
 /* ===== PARTICLE BACKGROUND ===== */
@@ -223,6 +237,7 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
+    background: var(--bg);
 }
 
 .grid-overlay {
@@ -543,7 +558,7 @@ body {
 
 /* ===== ABOUT SECTION ===== */
 .about {
-    background: linear-gradient(180deg, var(--bg) 0%, var(--dark-light) 100%);
+    background: var(--dark-light);
 }
 
 .about-grid {
@@ -740,7 +755,7 @@ body {
 
 /* ===== PROJECTS SECTION ===== */
 .projects {
-    background: linear-gradient(180deg, var(--dark-light) 0%, var(--bg) 100%);
+    background: var(--bg);
 }
 
 .projects-grid {
