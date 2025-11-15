@@ -995,6 +995,16 @@ body {
     font-size: 0.9rem;
 }
 
+.footer-code-tag {
+    font-family: 'Courier New', monospace;
+    color: var(--primary);
+    font-weight: 600;
+    background: rgba(139, 92, 246, 0.1);
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
 .footer-social {
     display: flex;
     gap: 15px;
