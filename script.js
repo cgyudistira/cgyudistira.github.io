@@ -7,17 +7,25 @@ window.addEventListener('load', function() {
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+if (hamburger && navMenu) {
+    console.log('✅ Hamburger and menu found');
+    
+    hamburger.addEventListener('click', () => {
+        console.log('🍔 Hamburger clicked');
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        console.log('Menu active:', navMenu.classList.contains('active'));
     });
-});
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+} else {
+    console.error('❌ Hamburger or menu not found');
+}
 
 // ===== SCROLL REVEAL ANIMATION =====
 const observerOptions = {

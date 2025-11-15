@@ -83,6 +83,8 @@ body::before {
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text);
+    position: relative;
+    z-index: 1001;
 }
 
 .brand-logo-img {
@@ -1208,10 +1210,15 @@ body::before {
         padding: 40px 0 30px;
         border-top: 1px solid var(--border);
         gap: 20px;
+        z-index: 999;
     }
 
     .nav-menu.active {
         left: 0;
+    }
+    
+    .nav-menu li {
+        list-style: none;
     }
     
     .nav-menu-login {
@@ -1224,6 +1231,8 @@ body::before {
 
     .hamburger {
         display: flex;
+        z-index: 1001;
+        position: relative;
     }
 
     .hamburger.active span:nth-child(1) {
