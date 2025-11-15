@@ -671,3 +671,43 @@ window.addEventListener('load', () => {
 });
 
 console.log('%c🚀 Custom cursor and animations loaded!', 'color: #8B5CF6; font-size: 14px; font-weight: bold;');
+
+
+// ===== FIX LOGO DISPLAY =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🎨 Fixing logo display...');
+    
+    // Check navbar logo
+    const navBrand = document.querySelector('.nav-brand');
+    const navLogo = document.querySelector('.nav-brand .brand-logo-img');
+    
+    if (navLogo && navBrand) {
+        // Wait a bit for image to load
+        setTimeout(() => {
+            if (navLogo.complete && navLogo.naturalHeight !== 0) {
+                navBrand.classList.add('has-logo');
+                console.log('✅ Navbar logo loaded, hiding icon/text');
+            } else {
+                // If logo fails, remove it
+                navLogo.remove();
+                console.log('⚠️ Navbar logo failed, using fallback');
+            }
+        }, 100);
+    }
+    
+    // Check footer logo
+    const footerBrand = document.querySelector('.brand-logo');
+    const footerLogo = document.querySelector('.footer-logo-img');
+    
+    if (footerLogo && footerBrand) {
+        setTimeout(() => {
+            if (footerLogo.complete && footerLogo.naturalHeight !== 0) {
+                footerBrand.classList.add('has-logo');
+                console.log('✅ Footer logo loaded, hiding icon/text');
+            } else {
+                footerLogo.remove();
+                console.log('⚠️ Footer logo failed, using fallback');
+            }
+        }, 100);
+    }
+});
