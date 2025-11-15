@@ -1369,64 +1369,64 @@ body::before {
 .code-tag {
     font-size: 4rem;
     font-weight: 300;
-    color: var(--primary);
     font-family: 'Courier New', monospace;
-    animation: fadeIn 1s ease-out 0.4s both;
-    transition: all 0.5s ease;
+    animation: fadeIn 1s ease-out 0.4s both, codeTagGlow 3s ease-in-out infinite;
     cursor: default;
     position: relative;
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
 }
 
-.code-tag:hover {
-    color: var(--secondary);
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.8),
-                 0 0 40px rgba(139, 92, 246, 0.6),
-                 0 0 60px rgba(236, 72, 153, 0.5);
-    transform: scale(1.05);
+@keyframes codeTagGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5))
+                drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.6))
+                drop-shadow(0 0 30px rgba(236, 72, 153, 0.4))
+                drop-shadow(0 0 45px rgba(139, 92, 246, 0.3));
+    }
 }
 
 .username {
     font-size: 4.5rem;
     font-weight: 800;
     font-family: 'Courier New', monospace;
-    animation: fadeIn 1s ease-out 0.6s both;
+    animation: fadeIn 1s ease-out 0.6s both, gradientShift 4s ease infinite;
     cursor: default;
     position: relative;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent), var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    background-size: 200% 200%;
-    transition: all 0.5s ease;
-}
-
-.username:hover {
-    background-position: 100% 50%;
-    animation: gradientShift 2s ease infinite, textGlow 1.5s ease-in-out infinite;
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8))
-            drop-shadow(0 0 40px rgba(236, 72, 153, 0.6))
-            drop-shadow(0 0 60px rgba(139, 92, 246, 0.4));
+    background-size: 300% 300%;
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.6))
+            drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));
 }
 
 @keyframes gradientShift {
     0%, 100% {
         background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-@keyframes textGlow {
-    0%, 100% {
         filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.6))
                 drop-shadow(0 0 30px rgba(139, 92, 246, 0.4));
     }
-    50% {
-        filter: drop-shadow(0 0 25px rgba(236, 72, 153, 0.8))
-                drop-shadow(0 0 50px rgba(236, 72, 153, 0.6))
-                drop-shadow(0 0 75px rgba(139, 92, 246, 0.4));
+    33% {
+        background-position: 50% 50%;
+        filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.7))
+                drop-shadow(0 0 40px rgba(236, 72, 153, 0.5))
+                drop-shadow(0 0 60px rgba(139, 92, 246, 0.3));
+    }
+    66% {
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 18px rgba(6, 182, 212, 0.6))
+                drop-shadow(0 0 35px rgba(6, 182, 212, 0.4))
+                drop-shadow(0 0 50px rgba(236, 72, 153, 0.3));
     }
 }
 
@@ -1437,14 +1437,7 @@ body::before {
     margin-bottom: 20px;
     font-weight: 400;
     animation: fadeIn 1s ease-out 0.8s both;
-    transition: all 0.4s ease;
     cursor: default;
-}
-
-.hero-name:hover {
-    color: var(--primary);
-    text-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
-    transform: translateY(-2px);
 }
 
 /* Responsive adjustments for code tag */
@@ -1459,15 +1452,6 @@ body::before {
     
     .hero-name {
         font-size: 0.95rem;
-    }
-    
-    /* Disable hover effects on mobile for better performance */
-    .code-tag:hover,
-    .username:hover,
-    .hero-name:hover {
-        transform: none;
-        animation: none;
-        filter: none;
     }
 }
 
