@@ -14,109 +14,70 @@ window.addEventListener('load', function() {
 // ===== OPTIMIZED PARTICLE BACKGROUND =====
 function initParticles() {
     particlesJS('particles-js', {
-    particles: {
-        number: {
-            value: 50, // Reduced from 80 for better performance
-            density: {
-                enable: true,
-                value_area: 1000
-            }
-        },
-        color: {
-            value: '#8B5CF6'
-        },
-        shape: {
-            type: 'circle'
-        },
-        opacity: {
-            value: 0.5,
-            random: true,
-            anim: {
-                enable: false // Disable opacity animation for performance
-            }
-        },
-        size: {
-            value: 6, // Larger particles for better visibility
-            random: true,
-            anim: {
-                enable: false // Disable size animation for performance
-            }
-        },
-        line_linked: {
-            enable: true,
-            distance: 200, // Increased for better visibility
-            color: '#8B5CF6',
-            opacity: 0.4,
-            width: 2
-        },
-        move: {
-            enable: true,
-            speed: 1.5, // Slower for smoother performance
-            direction: 'none',
-            random: false,
-            straight: false,
-            out_mode: 'out',
-            bounce: false
-        }
-    },
-    interactivity: {
-        detect_on: 'canvas',
-        events: {
-            onhover: {
-                enable: true,
-                mode: 'grab'
+        particles: {
+            number: {
+                value: 50,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
             },
-            onclick: {
-                enable: false // Disable click to reduce interactions
+            color: {
+                value: '#8B5CF6'
             },
-            resize: true
-        },
-        modes: {
-            grab: {
+            shape: {
+                type: 'circle'
+            },
+            opacity: {
+                value: 0.6,
+                random: false
+            },
+            size: {
+                value: 8,
+                random: false
+            },
+            line_linked: {
+                enable: true,
                 distance: 200,
-                line_linked: {
-                    opacity: 0.6
+                color: '#8B5CF6',
+                opacity: 0.5,
+                width: 2
+            },
+            move: {
+                enable: true,
+                speed: 1.5,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'grab'
+                },
+                onclick: {
+                    enable: false
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 200,
+                    line_linked: {
+                        opacity: 0.8
+                    }
                 }
             }
-        }
-    },
-    retina_detect: true
+        },
+        retina_detect: false
     });
     
-    // Force refresh particles and fix canvas size
-    setTimeout(() => {
-        if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
-            const pJS = window.pJSDom[0].pJS;
-            
-            // Fix canvas size to prevent distortion
-            const canvas = pJS.canvas.el;
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-            
-            // Update particle size
-            pJS.particles.size.value = 6;
-            pJS.particles.line_linked.width = 2;
-            pJS.particles.line_linked.distance = 200;
-            
-            // Refresh particles
-            pJS.fn.particlesRefresh();
-            
-            console.log('✅ Particles size forced to 6px, canvas fixed');
-        }
-    }, 500);
-    
-    // Also fix on window resize
-    window.addEventListener('resize', () => {
-        if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
-            const pJS = window.pJSDom[0].pJS;
-            const canvas = pJS.canvas.el;
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-            pJS.fn.particlesRefresh();
-        }
-    });
-    
-    console.log('✅ Particles initialized (optimized)');
+    console.log('✅ Particles initialized - size: 8px, fixed');
 }
 
 // ===== MOBILE MENU =====
