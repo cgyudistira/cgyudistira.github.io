@@ -97,6 +97,7 @@ body::before {
     display: flex;
     list-style: none;
     gap: 40px;
+    align-items: center;
 }
 
 .nav-menu a {
@@ -125,6 +126,11 @@ body::before {
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+.nav-menu-login {
+    display: flex;
+    align-items: center;
 }
 
 .hamburger {
@@ -1201,17 +1207,19 @@ body::before {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
         padding: 40px 0 30px;
         border-top: 1px solid var(--border);
+        gap: 20px;
     }
 
     .nav-menu.active {
         left: 0;
     }
+    
+    .nav-menu-login {
+        margin-top: 10px;
+    }
 
     .nav-login-btn {
-        position: relative;
-        margin: 30px auto 0;
-        display: flex;
-        width: fit-content;
+        margin: 0 auto;
     }
 
     .hamburger {
@@ -1709,13 +1717,6 @@ body::before {
     
     .modal-btn-content p {
         font-size: 0.85rem;
-    }
-    
-    .nav-login-btn {
-        bottom: 15px;
-        right: 15px;
-        padding: 10px 24px;
-        font-size: 0.9rem;
     }
 }
 
