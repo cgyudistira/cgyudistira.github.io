@@ -511,11 +511,7 @@ window.addEventListener('scroll', () => {
                     shape.style.transform = `translate(${scrolled * speed * 0.3}px, ${scrolled * speed}px)`;
                 });
                 
-                const heroContent = document.querySelector('.hero-content');
-                if (heroContent) {
-                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                    // Removed opacity fade to keep text visible
-                }
+                // Hero content parallax removed - text stays static and visible
             }
             
             ticking = false;
@@ -545,17 +541,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== OPTIMIZED: SHIMMER ONLY ON HOVER =====
-const gradientTexts = document.querySelectorAll('.gradient-text, .hero-title .username');
-gradientTexts.forEach(text => {
-    text.addEventListener('mouseenter', function() {
-        this.classList.add('shimmer-text');
-    });
-    
-    text.addEventListener('mouseleave', function() {
-        this.classList.remove('shimmer-text');
-    });
-});
+// ===== SHIMMER EFFECT DISABLED FOR HERO TEXT =====
+// No shimmer or hover effects on hero title to keep it clean and professional
 
 // ===== OPTIMIZED: FLOATING ANIMATION ONLY ON HOVER =====
 const floatingCards = document.querySelectorAll('.skill-card, .project-card');
