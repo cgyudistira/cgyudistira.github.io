@@ -335,7 +335,6 @@ console.log('%cBuilt with ❤️ using HTML, CSS, and JavaScript', 'color: #EC48
 
 // ===== LOGIN MODAL =====
 const loginBtn = document.getElementById('loginBtn');
-const mobileLoginBtn = document.getElementById('mobileLoginBtn');
 const loginModal = document.getElementById('loginModal');
 const closeModal = document.getElementById('closeModal');
 const adminBtn = document.getElementById('adminBtn');
@@ -356,18 +355,9 @@ function openLoginModal() {
     }
 }
 
-// Desktop login button
+// Login button (works for both desktop and mobile)
 if (loginBtn) {
     loginBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        openLoginModal();
-    });
-}
-
-// Mobile login button
-if (mobileLoginBtn) {
-    mobileLoginBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         openLoginModal();
