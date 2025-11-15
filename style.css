@@ -1378,7 +1378,14 @@ body::before {
     font-size: 4.5rem;
     font-weight: 800;
     font-family: 'Courier New', monospace;
-    animation: fadeIn 1s ease-out 0.6s both, glow 2s ease-in-out infinite;
+    animation: fadeIn 1s ease-out 0.6s both;
+    transition: all 0.3s ease;
+}
+
+.username:hover {
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.8),
+                 0 0 60px rgba(236, 72, 153, 0.6);
+    transform: scale(1.05);
 }
 
 .hero-name {
@@ -1390,17 +1397,7 @@ body::before {
     animation: fadeIn 1s ease-out 0.8s both;
 }
 
-@keyframes glow {
-    0%, 100% {
-        text-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
-                     0 0 40px rgba(139, 92, 246, 0.3);
-    }
-    50% {
-        text-shadow: 0 0 30px rgba(139, 92, 246, 0.8),
-                     0 0 60px rgba(139, 92, 246, 0.5),
-                     0 0 80px rgba(236, 72, 153, 0.3);
-    }
-}
+/* Glow animation removed - replaced with hover effect */
 
 /* Responsive adjustments for code tag */
 @media (max-width: 768px) {
