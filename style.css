@@ -90,21 +90,7 @@ body::before {
     width: auto;
     max-width: 280px;
     object-fit: contain;
-}
-
-/* Hide icon and text when logo image is loaded */
-.nav-brand.has-logo .brand-icon,
-.nav-brand.has-logo .brand-text {
-    display: none;
-}
-
-.brand-icon {
-    font-size: 1.5rem;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-.brand-text {
-    display: inline-flex;
+    display: block;
 }
 
 .nav-menu {
@@ -1040,12 +1026,6 @@ body::before {
     object-fit: contain;
 }
 
-/* Hide icon and text when logo image is loaded in footer */
-.brand-logo.has-logo .brand-icon,
-.brand-logo.has-logo > span:not([class]) {
-    display: none;
-}
-
 .footer-brand p {
     color: var(--text-muted);
     line-height: 1.6;
@@ -1198,6 +1178,16 @@ body::before {
 }
 
 @media (max-width: 768px) {
+    .brand-logo-img {
+        height: 35px;
+        max-width: 200px;
+    }
+    
+    .footer-logo-img {
+        height: 35px;
+        max-width: 200px;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1314,6 +1304,16 @@ body::before {
 }
 
 @media (max-width: 480px) {
+    .brand-logo-img {
+        height: 32px;
+        max-width: 180px;
+    }
+    
+    .footer-logo-img {
+        height: 32px;
+        max-width: 180px;
+    }
+    
     .hero-title {
         font-size: 2rem;
     }
