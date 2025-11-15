@@ -1853,3 +1853,26 @@ body {
 .tilt-effect:hover {
     transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
 }
+
+
+/* ===== PARTICLES.JS CUSTOM STYLING ===== */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#particles-js canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Force larger particle size */
+#particles-js .particles-js-canvas-el {
+    width: 100% !important;
+    height: 100% !important;
+}
