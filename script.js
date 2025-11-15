@@ -29,14 +29,14 @@ function initParticles() {
             type: 'circle'
         },
         opacity: {
-            value: 0.4,
+            value: 0.5,
             random: true,
             anim: {
                 enable: false // Disable opacity animation for performance
             }
         },
         size: {
-            value: 4, // Slightly larger particles
+            value: 6, // Larger particles for better visibility
             random: true,
             anim: {
                 enable: false // Disable size animation for performance
@@ -44,10 +44,10 @@ function initParticles() {
         },
         line_linked: {
             enable: true,
-            distance: 180, // Increased for better visibility
+            distance: 200, // Increased for better visibility
             color: '#8B5CF6',
-            opacity: 0.3,
-            width: 1.5
+            opacity: 0.4,
+            width: 2
         },
         move: {
             enable: true,
