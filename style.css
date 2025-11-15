@@ -1379,7 +1379,14 @@ body::before {
     font-weight: 800;
     font-family: 'Courier New', monospace;
     animation: fadeIn 1s ease-out 0.6s both;
-    /* No hover effects - text stays static */
+    transition: text-shadow 0.3s ease;
+    cursor: default;
+}
+
+.username:hover {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.8),
+                 0 0 40px rgba(139, 92, 246, 0.6),
+                 0 0 60px rgba(236, 72, 153, 0.4);
 }
 
 .hero-name {
