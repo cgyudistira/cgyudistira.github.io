@@ -57,8 +57,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// ===== SMOOTH SCROLL (REMOVED DUPLICATE - SEE BELOW) =====
-
 // ===== TYPING EFFECT FOR HERO =====
 const typingTexts = document.querySelectorAll('.typing-text');
 typingTexts.forEach((text, index) => {
@@ -137,9 +135,7 @@ window.addEventListener('load', () => {
     });
 });
 
-// ===== PARALLAX (REMOVED DUPLICATE - MERGED WITH OPTIMIZED VERSION BELOW) =====
-
-// ===== CUSTOM CURSOR (REPLACED OLD CURSOR GLOW) =====
+// ===== CUSTOM CURSOR =====
 if (window.innerWidth > 768) {
     console.log('🎯 Initializing custom cursor...');
     
@@ -433,8 +429,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ Login modal initialized');
 });
 
-// ===== CUSTOM CURSOR (DUPLICATE REMOVED - USING INLINE STYLES VERSION ABOVE) =====
-
 // ===== SCROLL PROGRESS INDICATOR =====
 const scrollIndicator = document.createElement('div');
 scrollIndicator.className = 'scroll-indicator';
@@ -472,25 +466,6 @@ revealElements.forEach(el => {
     revealObserver.observe(el);
 });
 
-// ===== MAGNETIC BUTTON EFFECT =====
-const magneticButtons = document.querySelectorAll('.btn, .nav-login-btn, .modal-btn');
-
-magneticButtons.forEach(btn => {
-    btn.classList.add('magnetic-btn');
-    
-    btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        
-        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-    });
-    
-    btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'translate(0, 0)';
-    });
-});
-
 // ===== OPTIMIZED SCROLL HANDLER (COMBINED: PARALLAX + PROGRESS) =====
 let ticking = false;
 window.addEventListener('scroll', () => {
@@ -520,12 +495,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ===== RIPPLE EFFECT =====
-const rippleButtons = document.querySelectorAll('.btn, button');
-rippleButtons.forEach(btn => {
-    btn.classList.add('ripple');
-});
-
 // ===== SMOOTH SCROLL WITH EASING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -538,21 +507,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
         }
-    });
-});
-
-// ===== SHIMMER EFFECT DISABLED FOR HERO TEXT =====
-// No shimmer or hover effects on hero title to keep it clean and professional
-
-// ===== OPTIMIZED: FLOATING ANIMATION ONLY ON HOVER =====
-const floatingCards = document.querySelectorAll('.skill-card, .project-card');
-floatingCards.forEach((card) => {
-    card.addEventListener('mouseenter', function() {
-        this.style.animation = 'floatSlow 2s ease-in-out';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.animation = 'none';
     });
 });
 
