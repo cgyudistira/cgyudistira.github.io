@@ -4,28 +4,43 @@ window.addEventListener('load', function() {
 });
 
 // ===== MOBILE MENU =====
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
 
-if (hamburger && navMenu) {
-    console.log('✅ Hamburger and menu found');
-    
-    hamburger.addEventListener('click', () => {
-        console.log('🍔 Hamburger clicked');
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        console.log('Menu active:', navMenu.classList.contains('active'));
-    });
+    console.log('Hamburger element:', hamburger);
+    console.log('Nav menu element:', navMenu);
 
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+    if (hamburger && navMenu) {
+        console.log('✅ Hamburger and menu found');
+        
+        hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('🍔 Hamburger clicked');
+            
+            const isActive = navMenu.classList.contains('active');
+            console.log('Current state - active:', isActive);
+            
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            console.log('New state - active:', navMenu.classList.contains('active'));
+            console.log('Nav menu classes:', navMenu.className);
         });
-    });
-} else {
-    console.error('❌ Hamburger or menu not found');
-}
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    } else {
+        console.error('❌ Hamburger or menu not found');
+        console.error('Hamburger:', hamburger);
+        console.error('Menu:', navMenu);
+    }
+});
 
 // ===== SCROLL REVEAL ANIMATION =====
 const observerOptions = {

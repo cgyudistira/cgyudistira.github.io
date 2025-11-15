@@ -1197,28 +1197,31 @@ body::before {
     }
     
     .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: rgba(10, 10, 20, 0.98);
-        backdrop-filter: blur(20px);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
-        padding: 40px 0 30px;
-        border-top: 1px solid var(--border);
-        gap: 20px;
-        z-index: 999;
+        position: fixed !important;
+        left: -100% !important;
+        top: 70px !important;
+        flex-direction: column !important;
+        background: rgba(10, 10, 20, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        width: 100% !important;
+        text-align: center !important;
+        transition: left 0.3s ease !important;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3) !important;
+        padding: 40px 0 30px !important;
+        border-top: 1px solid var(--border) !important;
+        gap: 20px !important;
+        z-index: 999 !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     .nav-menu.active {
-        left: 0;
+        left: 0 !important;
     }
     
     .nav-menu li {
         list-style: none;
+        width: 100%;
     }
     
     .nav-menu-login {
