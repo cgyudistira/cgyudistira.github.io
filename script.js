@@ -39,12 +39,12 @@ function initParticles() {
                 }
             },
             size: {
-                value: 5,
+                value: 6,
                 random: true,
                 anim: {
                     enable: true,
                     speed: 2,
-                    size_min: 3,
+                    size_min: 4,
                     sync: false
                 }
             },
@@ -90,7 +90,7 @@ function initParticles() {
                 }
             }
         },
-        retina_detect: true
+        retina_detect: false
     });
     
     console.log('✅ Particles initialized');
