@@ -167,11 +167,17 @@ const animateCounter = (element, targetText, duration = 2000) => {
     
     // If parsing fails, just show the original text
     if (isNaN(numericTarget) || numericTarget === 0) {
+        console.log('Invalid target:', targetText);
         return;
     }
     
+    console.log('Animating:', targetText, 'to', numericTarget);
+    
     let current = 0;
     const increment = numericTarget / (duration / 16);
+    
+    // Set initial value to 0
+    element.textContent = '0' + (hasPercent ? '%' : hasPlus ? '+' : '');
     
     const timer = setInterval(() => {
         current += increment;
@@ -184,23 +190,28 @@ const animateCounter = (element, targetText, duration = 2000) => {
     }, 16);
 };
 
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumber = entry.target.querySelector('.stat-number');
-            if (statNumber && statNumber.textContent.trim()) {
-                const targetValue = statNumber.textContent.trim();
-                // Start animation
-                animateCounter(statNumber, targetValue);
-                statsObserver.unobserve(entry.target);
+// Initialize stats animation when page loads
+window.addEventListener('load', () => {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumber = entry.target.querySelector('.stat-number');
+                if (statNumber && statNumber.textContent.trim()) {
+                    const targetValue = statNumber.textContent.trim();
+                    // Start animation
+                    setTimeout(() => {
+                        animateCounter(statNumber, targetValue);
+                    }, 100);
+                    statsObserver.unobserve(entry.target);
+                }
             }
-        }
-    });
-}, { threshold: 0.5 });
+        });
+    }, { threshold: 0.3 });
 
-// Observe all stat items
-document.querySelectorAll('.stat-item').forEach(stat => {
-    statsObserver.observe(stat);
+    // Observe all stat items
+    document.querySelectorAll('.stat-item').forEach(stat => {
+        statsObserver.observe(stat);
+    });
 });
 
 // ===== PARALLAX EFFECT FOR GRADIENT ORBS =====

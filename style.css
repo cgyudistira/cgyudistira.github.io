@@ -322,10 +322,23 @@ body {
     justify-content: center;
     gap: 60px;
     animation: fadeIn 1s ease-out 1.2s both;
+    padding: 40px;
+    background: rgba(139, 92, 246, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .stat-item {
     text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateY(-5px);
 }
 
 .stat-number {
@@ -335,7 +348,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: fadeInScale 1s ease-out 1.4s both;
+    animation: fadeInScale 1s ease-out 1.4s both, statGlow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
 }
 
 @keyframes fadeInScale {
@@ -346,6 +360,18 @@ body {
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@keyframes statGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5))
+                drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8))
+                drop-shadow(0 0 30px rgba(236, 72, 153, 0.6))
+                drop-shadow(0 0 40px rgba(236, 72, 153, 0.4));
     }
 }
 
