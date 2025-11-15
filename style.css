@@ -276,7 +276,7 @@ body::before {
 .orb-3 {
     width: 350px;
     height: 350px;
-    background: var(--accent);
+    background: var(--primary);
     top: 50%;
     right: 20%;
     animation-delay: 4s;
