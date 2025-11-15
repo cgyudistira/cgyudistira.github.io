@@ -159,19 +159,28 @@ typingTexts.forEach((text, index) => {
 });
 
 // ===== ANIMATED COUNTER FOR STATS =====
-const animateCounter = (element, target, duration = 2000) => {
+const animateCounter = (element, targetText, duration = 2000) => {
+    // Extract number and suffix from target text
+    const hasPlus = targetText.includes('+');
+    const hasPercent = targetText.includes('%');
+    const numericTarget = parseInt(targetText.replace(/[^0-9]/g, ''));
+    
+    // If parsing fails, just show the original text
+    if (isNaN(numericTarget)) {
+        element.textContent = targetText;
+        return;
+    }
+    
     let current = 0;
-    const increment = target / (duration / 16);
-    const isPercentage = target.toString().includes('%');
-    const numericTarget = parseInt(target);
+    const increment = numericTarget / (duration / 16);
     
     const timer = setInterval(() => {
         current += increment;
         if (current >= numericTarget) {
-            element.textContent = target;
+            element.textContent = numericTarget + (hasPercent ? '%' : hasPlus ? '+' : '');
             clearInterval(timer);
         } else {
-            element.textContent = Math.floor(current) + (isPercentage ? '%' : '+');
+            element.textContent = Math.floor(current) + (hasPercent ? '%' : hasPlus ? '+' : '');
         }
     }, 16);
 };
@@ -180,7 +189,7 @@ const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const statNumber = entry.target.querySelector('.stat-number');
-            const targetValue = statNumber.textContent;
+            const targetValue = statNumber.textContent.trim();
             animateCounter(statNumber, targetValue);
             statsObserver.unobserve(entry.target);
         }
