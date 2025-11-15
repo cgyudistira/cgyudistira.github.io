@@ -132,6 +132,11 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Hide mobile login button on desktop */
+.nav-menu-login {
+    display: none;
+}
+
 /* ===== LOGIN BUTTON ===== */
 .nav-login-btn {
     display: inline-flex;
@@ -1174,12 +1179,37 @@ body {
     }
 
     .nav-login-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 999;
-        padding: 12px 28px;
+        display: none;
+    }
+    
+    .nav-menu-login {
+        display: block;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+    }
+    
+    .nav-mobile-login-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 40px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: 600;
         font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    .nav-mobile-login-btn:active {
+        transform: scale(0.95);
     }
 
     .hamburger {

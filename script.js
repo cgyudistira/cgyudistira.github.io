@@ -335,27 +335,42 @@ console.log('%cBuilt with ❤️ using HTML, CSS, and JavaScript', 'color: #EC48
 
 // ===== LOGIN MODAL =====
 const loginBtn = document.getElementById('loginBtn');
+const mobileLoginBtn = document.getElementById('mobileLoginBtn');
 const loginModal = document.getElementById('loginModal');
 const closeModal = document.getElementById('closeModal');
 const adminBtn = document.getElementById('adminBtn');
 const automationBtn = document.getElementById('automationBtn');
+const navMenu = document.querySelector('.nav-menu');
+const hamburger = document.querySelector('.hamburger');
 
-// Open modal
+// Function to open modal
+function openLoginModal() {
+    console.log('Opening login modal');
+    loginModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Close mobile menu if open
+    if (hamburger && navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+}
+
+// Desktop login button
 if (loginBtn) {
     loginBtn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Login button clicked');
-        loginModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        
-        // Close mobile menu if open
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        if (hamburger && navMenu) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
+        openLoginModal();
+    });
+}
+
+// Mobile login button
+if (mobileLoginBtn) {
+    mobileLoginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openLoginModal();
     });
 }
 
