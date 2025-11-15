@@ -1,4 +1,4 @@
-# Cokorda Gede Yudistira Putra
+# &lt;/cgyudistira&gt; - AI, Data and Automation Enthusiast
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://cgyudistira.github.io)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -251,7 +251,7 @@ Found a bug or have a suggestion? Please open an issue on GitHub.
 
 ## 📄 License
 
-© 2025 Cokorda Gede Yudistira Putra. All Rights Reserved.
+© 2025 &lt;/cgyudistira&gt;. All Rights Reserved.
 
 This website and its contents are proprietary. Unauthorized copying, modification, or distribution is prohibited.
 
@@ -276,7 +276,7 @@ This website and its contents are proprietary. Unauthorized copying, modificatio
 
 <div align="center">
 
-**Built with ❤️ and ☕ by Cokorda Gede Yudistira Putra**
+**Built with ❤️ and ☕ by &lt;/cgyudistira&gt;**
 
 ⭐ Star this repo if you find it helpful!
 
