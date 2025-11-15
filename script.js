@@ -514,7 +514,7 @@ window.addEventListener('scroll', () => {
                 const heroContent = document.querySelector('.hero-content');
                 if (heroContent) {
                     heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                    // Removed opacity fade to keep text visible
                 }
             }
             
