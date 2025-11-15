@@ -11,15 +11,15 @@ window.addEventListener('load', function() {
     }
 });
 
-// ===== PARTICLE BACKGROUND =====
+// ===== OPTIMIZED PARTICLE BACKGROUND =====
 function initParticles() {
     particlesJS('particles-js', {
     particles: {
         number: {
-            value: 80,
+            value: 50, // Reduced from 80 for better performance
             density: {
                 enable: true,
-                value_area: 800
+                value_area: 1000
             }
         },
         color: {
@@ -29,23 +29,29 @@ function initParticles() {
             type: 'circle'
         },
         opacity: {
-            value: 0.3,
-            random: true
+            value: 0.4,
+            random: true,
+            anim: {
+                enable: false // Disable opacity animation for performance
+            }
         },
         size: {
-            value: 3,
-            random: true
+            value: 4, // Slightly larger particles
+            random: true,
+            anim: {
+                enable: false // Disable size animation for performance
+            }
         },
         line_linked: {
             enable: true,
-            distance: 150,
+            distance: 180, // Increased for better visibility
             color: '#8B5CF6',
-            opacity: 0.2,
-            width: 1
+            opacity: 0.3,
+            width: 1.5
         },
         move: {
             enable: true,
-            speed: 2,
+            speed: 1.5, // Slower for smoother performance
             direction: 'none',
             random: false,
             straight: false,
@@ -61,26 +67,22 @@ function initParticles() {
                 mode: 'grab'
             },
             onclick: {
-                enable: true,
-                mode: 'push'
+                enable: false // Disable click to reduce interactions
             },
             resize: true
         },
         modes: {
             grab: {
-                distance: 140,
+                distance: 200,
                 line_linked: {
-                    opacity: 0.5
+                    opacity: 0.6
                 }
-            },
-            push: {
-                particles_nb: 4
             }
         }
     },
     retina_detect: true
     });
-    console.log('✅ Particles initialized');
+    console.log('✅ Particles initialized (optimized)');
 }
 
 // ===== MOBILE MENU =====
@@ -589,21 +591,33 @@ magneticButtons.forEach(btn => {
     });
 });
 
-// ===== PARALLAX EFFECT ON SCROLL =====
+// ===== OPTIMIZED PARALLAX (ONLY IN HERO SECTION) =====
+let ticking = false;
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    
-    // Parallax for hero shapes
-    const shapes = document.querySelectorAll('.gradient-orb');
-    shapes.forEach((shape, index) => {
-        const speed = (index + 1) * 0.3;
-        shape.style.transform = `translate(${scrolled * speed * 0.5}px, ${scrolled * speed}px)`;
-    });
-    
-    // Parallax for hero content
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            
+            // Only apply parallax if in hero section (first 100vh)
+            if (scrolled < window.innerHeight) {
+                // Parallax for hero shapes
+                const shapes = document.querySelectorAll('.gradient-orb');
+                shapes.forEach((shape, index) => {
+                    const speed = (index + 1) * 0.2; // Reduced speed
+                    shape.style.transform = `translate(${scrolled * speed * 0.3}px, ${scrolled * speed}px)`;
+                });
+                
+                // Parallax for hero content
+                const heroContent = document.querySelector('.hero-content');
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                }
+            }
+            
+            ticking = false;
+        });
+        ticking = true;
     }
 });
 
@@ -628,20 +642,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== ADD SHIMMER EFFECT TO GRADIENT TEXT =====
+// ===== OPTIMIZED: SHIMMER ONLY ON HOVER =====
 const gradientTexts = document.querySelectorAll('.gradient-text, .hero-title .username');
 gradientTexts.forEach(text => {
-    text.classList.add('shimmer-text');
+    text.addEventListener('mouseenter', function() {
+        this.classList.add('shimmer-text');
+    });
+    
+    text.addEventListener('mouseleave', function() {
+        this.classList.remove('shimmer-text');
+    });
 });
 
-// ===== FLOATING ANIMATION FOR CARDS =====
+// ===== OPTIMIZED: FLOATING ANIMATION ONLY ON HOVER =====
 const floatingCards = document.querySelectorAll('.skill-card, .project-card');
-floatingCards.forEach((card, index) => {
-    if (index % 2 === 0) {
-        card.style.animation = `floatSlow ${6 + index * 0.5}s ease-in-out infinite`;
-    } else {
-        card.style.animation = `floatMedium ${7 + index * 0.5}s ease-in-out infinite`;
-    }
+floatingCards.forEach((card) => {
+    card.addEventListener('mouseenter', function() {
+        this.style.animation = 'floatSlow 2s ease-in-out';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.animation = 'none';
+    });
 });
 
 // ===== PAGE LOAD ANIMATION =====
