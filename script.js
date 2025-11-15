@@ -83,16 +83,38 @@ function initParticles() {
     retina_detect: true
     });
     
-    // Force refresh particles after initialization
+    // Force refresh particles and fix canvas size
     setTimeout(() => {
         if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
-            window.pJSDom[0].pJS.particles.size.value = 6;
-            window.pJSDom[0].pJS.particles.line_linked.width = 2;
-            window.pJSDom[0].pJS.particles.line_linked.distance = 200;
-            window.pJSDom[0].pJS.fn.particlesRefresh();
-            console.log('✅ Particles size forced to 6px');
+            const pJS = window.pJSDom[0].pJS;
+            
+            // Fix canvas size to prevent distortion
+            const canvas = pJS.canvas.el;
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            
+            // Update particle size
+            pJS.particles.size.value = 6;
+            pJS.particles.line_linked.width = 2;
+            pJS.particles.line_linked.distance = 200;
+            
+            // Refresh particles
+            pJS.fn.particlesRefresh();
+            
+            console.log('✅ Particles size forced to 6px, canvas fixed');
         }
     }, 500);
+    
+    // Also fix on window resize
+    window.addEventListener('resize', () => {
+        if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+            const pJS = window.pJSDom[0].pJS;
+            const canvas = pJS.canvas.el;
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            pJS.fn.particlesRefresh();
+        }
+    });
     
     console.log('✅ Particles initialized (optimized)');
 }
