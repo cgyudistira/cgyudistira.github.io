@@ -335,12 +335,37 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: fadeInScale 1s ease-out 1.4s both;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .stat-label {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-top: 5px;
+    animation: fadeIn 1s ease-out 1.6s both;
+}
+
+.stat-item {
+    animation: fadeInUp 1s ease-out 1.2s both;
+}
+
+.stat-item:nth-child(2) {
+    animation-delay: 1.3s;
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 1.4s;
 }
 
 /* ===== SECTION HEADERS ===== */

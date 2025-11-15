@@ -166,8 +166,7 @@ const animateCounter = (element, targetText, duration = 2000) => {
     const numericTarget = parseInt(targetText.replace(/[^0-9]/g, ''));
     
     // If parsing fails, just show the original text
-    if (isNaN(numericTarget)) {
-        element.textContent = targetText;
+    if (isNaN(numericTarget) || numericTarget === 0) {
         return;
     }
     
@@ -189,13 +188,17 @@ const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const statNumber = entry.target.querySelector('.stat-number');
-            const targetValue = statNumber.textContent.trim();
-            animateCounter(statNumber, targetValue);
-            statsObserver.unobserve(entry.target);
+            if (statNumber && statNumber.textContent.trim()) {
+                const targetValue = statNumber.textContent.trim();
+                // Start animation
+                animateCounter(statNumber, targetValue);
+                statsObserver.unobserve(entry.target);
+            }
         }
     });
 }, { threshold: 0.5 });
 
+// Observe all stat items
 document.querySelectorAll('.stat-item').forEach(stat => {
     statsObserver.observe(stat);
 });
