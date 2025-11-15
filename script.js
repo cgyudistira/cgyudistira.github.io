@@ -57,20 +57,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+// ===== SMOOTH SCROLL (REMOVED DUPLICATE - SEE BELOW) =====
 
 // ===== TYPING EFFECT FOR HERO =====
 const typingTexts = document.querySelectorAll('.typing-text');
@@ -150,16 +137,7 @@ window.addEventListener('load', () => {
     });
 });
 
-// ===== PARALLAX EFFECT FOR GRADIENT ORBS =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const orbs = document.querySelectorAll('.gradient-orb');
-    
-    orbs.forEach((orb, index) => {
-        const speed = (index + 1) * 0.3;
-        orb.style.transform = `translate(${scrolled * speed * 0.5}px, ${scrolled * speed}px)`;
-    });
-});
+// ===== PARALLAX (REMOVED DUPLICATE - MERGED WITH OPTIMIZED VERSION BELOW) =====
 
 // ===== CUSTOM CURSOR (REPLACED OLD CURSOR GLOW) =====
 if (window.innerWidth > 768) {
@@ -460,13 +438,17 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===== SCROLL PROGRESS INDICATOR =====
 const scrollIndicator = document.createElement('div');
 scrollIndicator.className = 'scroll-indicator';
+scrollIndicator.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #8B5CF6, #EC4899);
+    z-index: 9999;
+    transition: width 0.1s ease;
+`;
 document.body.appendChild(scrollIndicator);
-
-window.addEventListener('scroll', () => {
-    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (window.pageYOffset / windowHeight) * 100;
-    scrollIndicator.style.width = scrolled + '%';
-});
 
 // ===== SCROLL REVEAL ANIMATIONS =====
 const revealElements = document.querySelectorAll('.section, .skill-card, .project-card, .about-grid, .contact-card');
@@ -509,23 +491,26 @@ magneticButtons.forEach(btn => {
     });
 });
 
-// ===== OPTIMIZED PARALLAX (ONLY IN HERO SECTION) =====
+// ===== OPTIMIZED SCROLL HANDLER (COMBINED: PARALLAX + PROGRESS) =====
 let ticking = false;
 window.addEventListener('scroll', () => {
     if (!ticking) {
         window.requestAnimationFrame(() => {
             const scrolled = window.pageYOffset;
             
-            // Only apply parallax if in hero section (first 100vh)
+            // Update scroll progress indicator
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrolled / windowHeight) * 100;
+            scrollIndicator.style.width = scrollPercent + '%';
+            
+            // Parallax only in hero section (first 100vh)
             if (scrolled < window.innerHeight) {
-                // Parallax for hero shapes
                 const shapes = document.querySelectorAll('.gradient-orb');
                 shapes.forEach((shape, index) => {
-                    const speed = (index + 1) * 0.2; // Reduced speed
+                    const speed = (index + 1) * 0.2;
                     shape.style.transform = `translate(${scrolled * speed * 0.3}px, ${scrolled * speed}px)`;
                 });
                 
-                // Parallax for hero content
                 const heroContent = document.querySelector('.hero-content');
                 if (heroContent) {
                     heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
