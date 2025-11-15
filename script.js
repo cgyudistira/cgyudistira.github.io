@@ -332,3 +332,60 @@ if ('IntersectionObserver' in window) {
 // ===== CONSOLE MESSAGE =====
 console.log('%c🚀 Welcome to my portfolio!', 'color: #8B5CF6; font-size: 20px; font-weight: bold;');
 console.log('%cBuilt with ❤️ using HTML, CSS, and JavaScript', 'color: #EC4899; font-size: 14px;');
+
+// ===== LOGIN MODAL =====
+const loginBtn = document.getElementById('loginBtn');
+const loginModal = document.getElementById('loginModal');
+const closeModal = document.getElementById('closeModal');
+const adminBtn = document.getElementById('adminBtn');
+const automationBtn = document.getElementById('automationBtn');
+
+// Open modal
+if (loginBtn) {
+    loginBtn.addEventListener('click', () => {
+        loginModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+// Close modal
+if (closeModal) {
+    closeModal.addEventListener('click', () => {
+        loginModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+}
+
+// Close modal when clicking outside
+loginModal.addEventListener('click', (e) => {
+    if (e.target === loginModal) {
+        loginModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && loginModal.classList.contains('active')) {
+        loginModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Admin button click
+if (adminBtn) {
+    adminBtn.addEventListener('click', () => {
+        // Add your admin portal URL here
+        console.log('Admin portal clicked');
+        // window.location.href = 'your-admin-url';
+    });
+}
+
+// Automation button click
+if (automationBtn) {
+    automationBtn.addEventListener('click', () => {
+        window.open('https://n8n.cgyudistira.my.id/', '_blank');
+        loginModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+}
