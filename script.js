@@ -342,9 +342,20 @@ const automationBtn = document.getElementById('automationBtn');
 
 // Open modal
 if (loginBtn) {
-    loginBtn.addEventListener('click', () => {
+    loginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Login button clicked');
         loginModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        // Close mobile menu if open
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        if (hamburger && navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
     });
 }
 
