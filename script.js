@@ -405,3 +405,199 @@ if (automationBtn) {
         document.body.style.overflow = 'auto';
     });
 }
+
+// ===== CUSTOM CURSOR =====
+if (window.innerWidth > 768) {
+    // Create cursor elements
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+
+    const follower = document.createElement('div');
+    follower.className = 'cursor-follower';
+    document.body.appendChild(follower);
+
+    let mouseX = 0, mouseY = 0;
+    let followerX = 0, followerY = 0;
+
+    // Update cursor position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+
+    // Smooth follower animation
+    function animateFollower() {
+        const distX = mouseX - followerX;
+        const distY = mouseY - followerY;
+        
+        followerX += distX * 0.1;
+        followerY += distY * 0.1;
+        
+        follower.style.left = followerX + 'px';
+        follower.style.top = followerY + 'px';
+        
+        requestAnimationFrame(animateFollower);
+    }
+    animateFollower();
+
+    // Hover effect on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .contact-card');
+    
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            document.body.classList.add('cursor-hover');
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            document.body.classList.remove('cursor-hover');
+        });
+    });
+
+    // Click effect
+    document.addEventListener('mousedown', () => {
+        document.body.classList.add('cursor-click');
+    });
+
+    document.addEventListener('mouseup', () => {
+        document.body.classList.remove('cursor-click');
+    });
+}
+
+// ===== SCROLL PROGRESS INDICATOR =====
+const scrollIndicator = document.createElement('div');
+scrollIndicator.className = 'scroll-indicator';
+document.body.appendChild(scrollIndicator);
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.pageYOffset / windowHeight) * 100;
+    scrollIndicator.style.width = scrolled + '%';
+});
+
+// ===== SCROLL REVEAL ANIMATIONS =====
+const revealElements = document.querySelectorAll('.section, .skill-card, .project-card, .about-grid, .contact-card');
+
+revealElements.forEach(el => {
+    el.classList.add('scroll-reveal');
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach(el => {
+    revealObserver.observe(el);
+});
+
+// ===== MAGNETIC BUTTON EFFECT =====
+const magneticButtons = document.querySelectorAll('.btn, .nav-login-btn, .modal-btn');
+
+magneticButtons.forEach(btn => {
+    btn.classList.add('magnetic-btn');
+    
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
+    });
+});
+
+// ===== PARALLAX EFFECT ON SCROLL =====
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    
+    // Parallax for hero shapes
+    const shapes = document.querySelectorAll('.gradient-orb');
+    shapes.forEach((shape, index) => {
+        const speed = (index + 1) * 0.3;
+        shape.style.transform = `translate(${scrolled * speed * 0.5}px, ${scrolled * speed}px)`;
+    });
+    
+    // Parallax for hero content
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// ===== RIPPLE EFFECT =====
+const rippleButtons = document.querySelectorAll('.btn, button');
+rippleButtons.forEach(btn => {
+    btn.classList.add('ripple');
+});
+
+// ===== SMOOTH SCROLL WITH EASING =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ===== ADD SHIMMER EFFECT TO GRADIENT TEXT =====
+const gradientTexts = document.querySelectorAll('.gradient-text, .hero-title .username');
+gradientTexts.forEach(text => {
+    text.classList.add('shimmer-text');
+});
+
+// ===== FLOATING ANIMATION FOR CARDS =====
+const floatingCards = document.querySelectorAll('.skill-card, .project-card');
+floatingCards.forEach((card, index) => {
+    if (index % 2 === 0) {
+        card.style.animation = `floatSlow ${6 + index * 0.5}s ease-in-out infinite`;
+    } else {
+        card.style.animation = `floatMedium ${7 + index * 0.5}s ease-in-out infinite`;
+    }
+});
+
+// ===== PAGE LOAD ANIMATION =====
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+    
+    // Animate hero elements sequentially
+    const heroElements = [
+        '.hero-badge',
+        '.hero-title',
+        '.hero-name',
+        '.hero-subtitle',
+        '.hero-description',
+        '.hero-buttons',
+        '.hero-stats'
+    ];
+    
+    heroElements.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, index * 100);
+        }
+    });
+});
+
+console.log('%c🚀 Custom cursor and animations loaded!', 'color: #8B5CF6; font-size: 14px; font-weight: bold;');
