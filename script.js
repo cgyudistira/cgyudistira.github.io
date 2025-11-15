@@ -1,5 +1,19 @@
+// ===== WAIT FOR DOM AND PARTICLES.JS TO LOAD =====
+window.addEventListener('load', function() {
+    console.log('🚀 Page loaded, initializing...');
+    
+    // Check if particlesJS is available
+    if (typeof particlesJS !== 'undefined') {
+        console.log('✅ Particles.js loaded');
+        initParticles();
+    } else {
+        console.error('❌ Particles.js not loaded');
+    }
+});
+
 // ===== PARTICLE BACKGROUND =====
-particlesJS('particles-js', {
+function initParticles() {
+    particlesJS('particles-js', {
     particles: {
         number: {
             value: 80,
@@ -65,7 +79,9 @@ particlesJS('particles-js', {
         }
     },
     retina_detect: true
-});
+    });
+    console.log('✅ Particles initialized');
+}
 
 // ===== MOBILE MENU =====
 const hamburger = document.querySelector('.hamburger');
@@ -227,8 +243,20 @@ window.addEventListener('scroll', () => {
 
 // ===== CUSTOM CURSOR (REPLACED OLD CURSOR GLOW) =====
 if (window.innerWidth > 768) {
+    console.log('🎯 Initializing custom cursor...');
+    
     // Remove default cursor
     document.body.style.cursor = 'none';
+    document.documentElement.style.cursor = 'none';
+    
+    // Add cursor none to all elements
+    const style = document.createElement('style');
+    style.textContent = `
+        * {
+            cursor: none !important;
+        }
+    `;
+    document.head.appendChild(style);
     
     // Create cursor elements
     const cursor = document.createElement('div');
@@ -417,77 +445,95 @@ console.log('%c🚀 Welcome to my portfolio!', 'color: #8B5CF6; font-size: 20px;
 console.log('%cBuilt with ❤️ using HTML, CSS, and JavaScript', 'color: #EC4899; font-size: 14px;');
 
 // ===== LOGIN MODAL =====
-const loginBtn = document.getElementById('loginBtn');
-const loginModal = document.getElementById('loginModal');
-const closeModal = document.getElementById('closeModal');
-const adminBtn = document.getElementById('adminBtn');
-const automationBtn = document.getElementById('automationBtn');
-const navMenu = document.querySelector('.nav-menu');
-const hamburger = document.querySelector('.hamburger');
-
-// Function to open modal
-function openLoginModal() {
-    console.log('Opening login modal');
-    loginModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔐 Initializing login modal...');
     
-    // Close mobile menu if open
-    if (hamburger && navMenu) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const closeModal = document.getElementById('closeModal');
+    const adminBtn = document.getElementById('adminBtn');
+    const automationBtn = document.getElementById('automationBtn');
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    // Function to open modal
+    function openLoginModal() {
+        console.log('✅ Opening login modal');
+        if (loginModal) {
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Close mobile menu if open
+            if (hamburger && navMenu) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        } else {
+            console.error('❌ Login modal not found');
+        }
     }
-}
 
-// Login button (works for both desktop and mobile)
-if (loginBtn) {
-    loginBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        openLoginModal();
-    });
-}
-
-// Close modal
-if (closeModal) {
-    closeModal.addEventListener('click', () => {
-        loginModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-}
-
-// Close modal when clicking outside
-loginModal.addEventListener('click', (e) => {
-    if (e.target === loginModal) {
-        loginModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
+    // Login button (works for both desktop and mobile)
+    if (loginBtn) {
+        console.log('✅ Login button found');
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('🖱️ Login button clicked');
+            openLoginModal();
+        });
+    } else {
+        console.error('❌ Login button not found');
     }
+
+    // Close modal
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Close modal when clicking outside
+    if (loginModal) {
+        loginModal.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && loginModal && loginModal.classList.contains('active')) {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Admin button click
+    if (adminBtn) {
+        adminBtn.addEventListener('click', () => {
+            console.log('🔧 Admin portal clicked');
+            // Add your admin portal URL here
+            // window.location.href = 'your-admin-url';
+        });
+    }
+
+    // Automation button click
+    if (automationBtn) {
+        console.log('✅ Automation button found');
+        automationBtn.addEventListener('click', () => {
+            console.log('🤖 Opening automation portal');
+            window.open('https://n8n.cgyudistira.my.id/', '_blank');
+            loginModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    console.log('✅ Login modal initialized');
 });
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && loginModal.classList.contains('active')) {
-        loginModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Admin button click
-if (adminBtn) {
-    adminBtn.addEventListener('click', () => {
-        // Add your admin portal URL here
-        console.log('Admin portal clicked');
-        // window.location.href = 'your-admin-url';
-    });
-}
-
-// Automation button click
-if (automationBtn) {
-    automationBtn.addEventListener('click', () => {
-        window.open('https://n8n.cgyudistira.my.id/', '_blank');
-        loginModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-}
 
 // ===== CUSTOM CURSOR (DUPLICATE REMOVED - USING INLINE STYLES VERSION ABOVE) =====
 
