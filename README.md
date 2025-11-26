@@ -12,7 +12,8 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ccff03?style=flat-square\&logo=javascript\&logoColor=000000)
 ![Responsive](https://img.shields.io/badge/Responsive-000000?style=flat-square\&logo=mobile\&logoColor=ccff03)
 
-<img src="https://via.placeholder.com/800x400/000000/ccff03?text=Dark+%2B+Neon+Yellow+Portfolio" alt="Theme Preview" width="100%">
+![Theme Preview](https://img.shields.io/badge/🎨_THEME-Dark_+_Neon_Yellow-ccff03?style=for-the-badge\&labelColor=000000)
+![Status](https://img.shields.io/badge/⚡_STATUS-Live_&_Optimized-ccff03?style=for-the-badge\&labelColor=000000)
 
 **Modern dark-themed portfolio showcasing 19+ years in Data Science, AI & Cultural Preservation**
 
