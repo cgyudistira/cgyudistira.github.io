@@ -1,19 +1,3 @@
-<div align="center">
-
-# `</cgyudistira>`
-
-### AI, Data & Automation Enthusiast
-
-[![Live Website](https://img.shields.io/badge/🌐_Live_Site-cgyudistira.github.io-ccff03?style=for-the-badge\&labelColor=000000)](https://cgyudistira.github.io) [![GitHub](https://img.shields.io/badge/💻_GitHub-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000)](https://github.com/cgyudistira)
-
-![HTML5](https://img.shields.io/badge/HTML5-000000?style=flat-square\&logo=html5\&logoColor=ccff03) ![CSS3](https://img.shields.io/badge/CSS3-000000?style=flat-square\&logo=css3\&logoColor=ccff03) ![JavaScript](https://img.shields.io/badge/JavaScript-ccff03?style=flat-square\&logo=javascript\&logoColor=000000) ![Responsive](https://img.shields.io/badge/Responsive-000000?style=flat-square\&logo=mobile\&logoColor=ccff03)
-
-![Theme](https://img.shields.io/badge/🎨_THEME-Dark_+_Neon_Yellow-ccff03?style=for-the-badge\&labelColor=000000) ![Status](https://img.shields.io/badge/⚡_STATUS-Live_&_Optimized-ccff03?style=for-the-badge\&labelColor=000000)
-
-**Modern dark-themed portfolio showcasing 19+ years in Data Science, AI & Cultural Preservation**
-
-[View Live](https://cgyudistira.github.io) • [Report Bug](https://github.com/cgyudistira/cgyudistira.github.io/issues) • [Request Feature](https://github.com/cgyudistira/cgyudistira.github.io/issues)
-
 </div>
 
 ***
