@@ -145,19 +145,6 @@ const speed = 200;  // Lower = faster
 ### v2.0.0 (2025-11)
 
 * Purple-pink gradient theme
-* Initial particle effects
-
-### v1.0.0 (2025-01)
-
-* Initial launch
-
-***
-
-## 📞 Contact
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-cokorda@gmail.com-ccff03?style=flat\&labelColor=000\&logo=gmail\&logoColor=ccff03)](mailto:cokorda@gmail.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-cgyudistira-ccff03?style=flat\&labelColor=000\&logo=linkedin\&logoColor=ccff03)](https://linkedin.com/in/cgyudistira) [![GitHub](https://img.shields.io/badge/GitHub-cgyudistira-ccff03?style=flat\&labelColor=000\&logo=github\&logoColor=ccff03)](https://github.com/cgyudistira)
 
 **WhatsApp**: +62 813-3735-2777
 
