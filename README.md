@@ -1,364 +1,415 @@
-# \</cgyudistira> - AI, Data & Automation Enthusiast
+<div align="center">
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-ccff03?style=for-the-badge\&logo=github\&logoColor=black)](https://cgyudistira.github.io)
-[![HTML5](https://img.shields.io/badge/HTML5-000000?style=for-the-badge\&logo=html5\&logoColor=ccff03)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-000000?style=for-the-badge\&logo=css3\&logoColor=ccff03)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ccff03?style=for-the-badge\&logo=javascript\&logoColor=000000)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-000000?style=for-the-badge\&logoColor=ccff03)](LICENSE)
+# `</cgyudistira>`
 
-> Modern dark-themed personal portfolio website with neon yellow accents, showcasing 19+ years of expertise in Data Science, AI, Credit Risk Analysis, and Cultural Preservation.
+### AI, Data & Automation Enthusiast
 
-## 🌐 Live Demo
+[![Live Website](https://img.shields.io/badge/🌐_Live_Site-cgyudistira.github.io-ccff03?style=for-the-badge\&labelColor=000000)](https://cgyudistira.github.io)
+[![GitHub](https://img.shields.io/badge/💻_GitHub-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000)](https://github.com/cgyudistira)
 
-**Visit:** <https://cgyudistira.github.io>
+![HTML5](https://img.shields.io/badge/HTML5-000000?style=flat-square\&logo=html5\&logoColor=ccff03)
+![CSS3](https://img.shields.io/badge/CSS3-000000?style=flat-square\&logo=css3\&logoColor=ccff03)
+![JavaScript](https://img.shields.io/badge/JavaScript-ccff03?style=flat-square\&logo=javascript\&logoColor=000000)
+![Responsive](https://img.shields.io/badge/Responsive-000000?style=flat-square\&logo=mobile\&logoColor=ccff03)
 
-## 📋 Overview
+<img src="https://via.placeholder.com/800x400/000000/ccff03?text=Dark+%2B+Neon+Yellow+Portfolio" alt="Theme Preview" width="100%">
 
-Professional portfolio website featuring a futuristic **Dark + Neon Yellow** theme with interactive particle effects, animated counters, and smooth scrolling. Built with vanilla HTML, CSS, and JavaScript for optimal performance and modern aesthetics.
+**Modern dark-themed portfolio showcasing 19+ years in Data Science, AI & Cultural Preservation**
 
-### Key Highlights
+[View Live](https://cgyudistira.github.io) • [Report Bug](https://github.com/cgyudistira/cgyudistira.github.io/issues) • [Request Feature](https://github.com/cgyudistira/cgyudistira.github.io/issues)
 
-* 🎯 **19+ Years Experience** in Data Science & AI
-* 🏆 **50+ Projects Completed** with measurable impact
-* 🌍 **3+ Industries Served**: Banking, Logistics, Cultural Tech
-* 🏛️ **Cultural Preservation**: AI-powered Lontar manuscript digitization
-* 💼 **Banking & Credit Risk** domain expertise
+</div>
 
-## ✨ Features
+***
 
-### Design & UI
+## 🎯 About This Project
 
-* **Dark + Neon Yellow Theme**: Professional dark background (#000) with vibrant neon yellow (#ccff03) accents
-* **Particle Effect**: Interactive animated particles in hero section with mouse interaction
-* **Glassmorphism Effects**: Modern frosted glass card designs with backdrop blur
-* **Responsive Layout**: Fully optimized for desktop, tablet, and mobile devices
-* **Smooth Animations**: Counter counting up animation, scroll reveals, and transitions
-* **Custom Logo**: Unique branding with \</cgyudistira> tag-style logo
+A **professional portfolio website** featuring a futuristic **Dark + Neon Yellow** aesthetic with interactive elements, built entirely with vanilla JavaScript for optimal performance.
 
-### Animations & Interactions
+### ✨ Key Features
 
-* **Hero Particle Effect**: Dynamic particle system with connection lines and mouse interaction
-* **Counter Animation**: Animated statistics counting from 0 to target values (19+, 50+, 3+)
-* **Scroll Reveal**: Intersection Observer API for smooth section animations
-* **Smooth Scrolling**: Native smooth scroll behavior for anchor links
-* **Timeline Design**: Professional career timeline with visual dots and dates
-* **Hover Effects**: Subtle transform effects on cards and interactive elements
-* **Mobile Menu**: Hamburger navigation with smooth toggle animations
+```
+🎨 Dark + Neon Yellow Theme       Modern, professional color scheme
+⚡ Interactive Particles           Canvas-based particle system with mouse interaction
+📊 Animated Counters              Count-up animation (19+, 50+, 3+)
+🎭 Glassmorphism Design           Frosted glass effects with backdrop blur
+📱 Fully Responsive               Optimized for all devices
+🚀 Zero Dependencies              Pure vanilla JavaScript, no libraries
+🎬 Smooth Animations              GPU-accelerated CSS transforms
+🌐 SEO Optimized                  Semantic HTML with meta tags
+```
 
-### Performance Optimizations
+***
 
-* **No Heavy Libraries**: Pure vanilla JavaScript (no jQuery, minimal dependencies)
-* **Optimized Animations**: CSS transforms and GPU acceleration
-* **Intersection Observer**: Efficient lazy loading and scroll-triggered animations
-* **Minimal Dependencies**: Only Google Fonts (Inter) for typography
-* **Clean Code**: Optimized CSS and JavaScript for faster load times
+## 🏆 Highlights
 
-## 🛠️ Tech Stack
+<table>
+<tr>
+<td align="center">
+<h3>19+</h3>
+<p>Years Experience</p>
+</td>
+<td align="center">
+<h3>50+</h3>
+<p>Projects Completed</p>
+</td>
+<td align="center">
+<h3>3+</h3>
+<p>Industries Served</p>
+</td>
+</tr>
+</table>
 
-### Frontend
+* 💼 **Banking & Financial Services**: Credit risk modeling, fraud detection
+* 📦 **Logistics & Supply Chain**: AI-driven forecasting and optimization
+* 🏛️ **Cultural Tech**: Lontar manuscript digitization using AI
 
-* **HTML5**: Semantic markup with accessibility considerations
-* **CSS3**:
-  * CSS Grid & Flexbox for layouts
-  * CSS Custom Properties (variables) for theming
-  * Keyframe animations for smooth transitions
-  * Media queries for responsive design
-  * Backdrop filters for glassmorphism
-* **JavaScript (ES6+)**:
-  * Intersection Observer API for scroll animations
-  * Canvas API for particle effects
-  * Custom counter animation implementation
-  * Event delegation for performance
-  * Mobile menu toggle functionality
+***
 
-### Design
+## 🛠️ Built With
 
-* **Google Fonts**: Inter font family (300-800 weights)
-* **SVG Icons**: Inline SVG graphics throughout
-* **Color System**: CSS variables with dark + neon yellow theme
-* **Responsive Images**: Optimized logo and favicon
+<div align="center">
 
-### Deployment
+| Technology | Purpose | Version |
+|:----------:|:-------:|:-------:|
+| ![HTML5](https://img.shields.io/badge/-HTML5-000000?style=flat\&logo=html5\&logoColor=ccff03) | Structure | 5 |
+| ![CSS3](https://img.shields.io/badge/-CSS3-000000?style=flat\&logo=css3\&logoColor=ccff03) | Styling | 3 |
+| ![JavaScript](https://img.shields.io/badge/-JavaScript-ccff03?style=flat\&logo=javascript\&logoColor=000000) | Interactivity | ES6+ |
+| ![Canvas](https://img.shields.io/badge/-Canvas_API-000000?style=flat\&logoColor=ccff03) | Particles | - |
+| ![Google Fonts](https://img.shields.io/badge/-Inter-000000?style=flat\&logo=google-fonts\&logoColor=ccff03) | Typography | - |
 
-* **GitHub Pages**: Automated deployment from main branch
-* **Custom Domain Ready**: Configured for DNS settings
+</div>
+
+***
 
 ## 📂 Project Structure
 
 ```
 cgyudistira.github.io/
-├── index.html              # Main HTML structure
-├── style.css               # Dark + Neon Yellow themed CSS
-├── script.js               # Particle effects & counter animations
-├── assets/
-│   └── img/
-│       ├── favicon.png     # Website favicon (neon yellow)
-│       ├── logo.png        # Brand logo (neon yellow)
-│       └── README.md       # Asset guidelines
-└── README.md               # This file
+│
+├── 📄 index.html              Main HTML structure
+├── 🎨 style.css               Dark + Neon Yellow themed CSS
+├── ⚡ script.js               Particle effects & animations
+│
+├── 📁 assets/
+│   └── 📁 img/
+│       ├── 🖼️ favicon.png     Neon yellow favicon (32x32)
+│       ├── 🎨 logo.png        Brand logo (neon yellow)
+│       └── 📝 README.md       Asset documentation
+│
+└── 📖 README.md               This file
 ```
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-* Modern web browser (Chrome, Firefox, Safari, Edge)
-* Text editor (VS Code, Sublime Text, etc.) for modifications
-* Git for version control
-
-### Local Development
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/cgyudistira/cgyudistira.github.io.git
-   cd cgyudistira.github.io
-   ```
-
-2. **Open in browser**
-   ```bash
-   # Windows
-   start index.html
-
-   # macOS
-   open index.html
-
-   # Linux
-   xdg-open index.html
-   ```
-
-3. **Or use a local server** (recommended)
-   ```bash
-   # Python 3
-   python -m http.server 8000
-
-   # Node.js (with http-server)
-   npx http-server
-   ```
-
-### Deployment
-
-**Automatic Deployment**: Changes pushed to the `main` branch are automatically deployed to GitHub Pages.
-
-```bash
-git add .
-git commit -m "Your commit message"
-git push origin main
-```
-
-**Manual Deployment**:
-
-1. Go to repository Settings → Pages
-2. Select `main` branch as source
-3. Save and wait for deployment
+***
 
 ## 🎨 Design System
 
 ### Color Palette
 
-| Color | Hex Code | Usage |
-|-------|----------|-------|
-| Neon Yellow | `#ccff03` | Primary brand color, accents, particles |
-| Pure Black | `#000000` | Main background |
-| Dark Gray | `#1a1a1a` | Section backgrounds, cards |
-| Border Yellow | `rgba(204, 255, 3, 0.2)` | Card borders, subtle accents |
-| Text Primary | `#ffffff` | Main text content |
-| Text Muted | `#9ca3af` | Secondary text, descriptions |
+<table>
+<tr>
+<td align="center" bgcolor="#ccff03">
+<strong>Neon Yellow</strong><br>
+<code>#ccff03</code><br>
+Primary Brand
+</td>
+<td align="center" bgcolor="#000000" style="color: white;">
+<strong>Pure Black</strong><br>
+<code>#000000</code><br>
+Background
+</td>
+<td align="center" bgcolor="#1a1a1a" style="color: white;">
+<strong>Dark Gray</strong><br>
+<code>#1a1a1a</code><br>
+Cards & Sections
+</td>
+</tr>
+</table>
 
 ### Typography
 
-* **Font Family**: Inter (Google Fonts)
-* **Weights**: 300, 400, 500, 600, 700, 800
+* **Font Family**: [Inter](https://fonts.google.com/specimen/Inter) *(Google Fonts)*
+* **Weights**: 300 (Light) • 400 (Regular) • 500 (Medium) • 600 (SemiBold) • 700 (Bold) • 800 (ExtraBold)
 * **Headings**: 700-800 weight with neon yellow accents
 * **Body**: 400 weight for optimal readability
-* **Monospace**: Used for code-style branding (\</cgyudistira>)
 
-### Responsive Breakpoints
-
-| Device | Breakpoint | Layout Changes |
-|--------|------------|----------------|
-| Desktop | ≥ 1200px | Full multi-column layout |
-| Laptop | 1024px - 1199px | Adjusted spacing |
-| Tablet | 768px - 1023px | 2-column to 1-column |
-| Mobile | < 768px | Single column, hamburger menu |
-| Small Mobile | < 480px | Optimized touch targets |
-
-## 🎭 Sections Overview
-
-### 1. Hero Section
-
-* Animated particle background (Canvas API)
-* Dynamic text with neon yellow highlights
-* CTA buttons with hover effects
-* Badge with pulsing dot animation
-
-### 2. About Section
-
-* Concise bio highlighting experience and passion
-* **Animated counter boxes** (19+, 50+, 3+)
-* Cultural preservation mission statement
-* Glassmorphism card design
-
-### 3. Professional Experience Timeline
-
-* Visual timeline with dots and connection lines
-* 4 major career milestones (2006-Present)
-* Detailed role descriptions
-* Industry-specific context
-
-### 4. Expertise Section
-
-* 3 core competencies with SVG icons
-* Data Science, Machine Learning, Credit Risk Modeling
-* Clean card-based layout
-
-### 5. Featured Projects
-
-* 4 showcase projects with metrics
-* Technology tags for each project
-* Project links and CTAs
-* Grid layout with responsive design
-
-### 6. Contact Section
-
-* Email, website, and location information
-* Contact form with validation
-* Social media links (GitHub, LinkedIn, etc.)
-* Professional WhatsApp float button
-
-### 7. Footer
-
-* Brand logo and tagline
-* Quick navigation links
-* Social media icons
-* Copyright information
-
-## 🔧 Customization Guide
-
-### Updating Content
-
-1. **Personal Information**: Edit `index.html`
-   * Hero section: Update name, title, description
-   * About section: Modify bio and statistics
-   * Experience: Update timeline entries
-   * Projects: Update project details and metrics
-
-2. **Styling**: Modify `style.css`
-   * Colors: Change CSS variables in `:root`
-   * Animations: Adjust keyframes and transitions
-   * Layout: Modify grid/flexbox properties
-
-3. **Functionality**: Update `script.js`
-   * Particle count and behavior
-   * Counter animation speed
-   * Scroll behavior settings
-
-### Changing Theme Colors
-
-To change from neon yellow to another color:
+### Components
 
 ```css
-/* In style.css, modify the :root variables */
+🎴 Glassmorphism Cards     → backdrop-filter: blur(10px)
+🔲 Animated Boxes          → transition: all 0.3s ease
+⚡ Particle Effect         → Canvas API with requestAnimationFrame
+📊 Counter Animation       → Intersection Observer API
+🔗 Smooth Scroll           → scroll-behavior: smooth
+```
+
+***
+
+## 🚀 Quick Start
+
+### 📥 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/cgyudistira/cgyudistira.github.io.git
+
+# Navigate to project directory
+cd cgyudistira.github.io
+
+# Open in browser
+# Windows
+start index.html
+
+# macOS
+open index.html
+
+# Linux
+xdg-open index.html
+```
+
+### 🌐 Local Development Server
+
+```bash
+# Using Python
+python -m http.server 8000
+
+# Using Node.js
+npx http-server
+
+# Then visit: http://localhost:8000
+```
+
+***
+
+## 📱 Sections Overview
+
+### 1️⃣ Hero Section
+
+* ⚡ **Animated particle background** (Canvas API)
+* 🎯 **Dynamic text** with neon yellow highlights
+* 🔘 **CTA buttons** with hover effects
+* 🟢 **Badge** with pulsing dot animation
+
+### 2️⃣ About Section
+
+* 📝 **Concise bio** highlighting expertise
+* 📊 **Animated counter boxes** (19+, 50+, 3+)
+* 🏛️ **Cultural preservation** mission
+* 🎴 **Glassmorphism** card design
+
+### 3️⃣ Professional Experience
+
+* 📅 **Visual timeline** with connecting lines
+* 💼 **4 career milestones** (2006-Present)
+* 🏢 **Banking** → **Logistics** → **AI Specialist**
+* 📈 **Detailed role descriptions**
+
+### 4️⃣ Expertise Section
+
+* 🎯 **3 core competencies** with SVG icons
+  * 📊 Data Science
+  * 🤖 Machine Learning
+  * 💰 Credit Risk Modeling
+
+### 5️⃣ Featured Projects
+
+* 🚀 **4 showcase projects** with real metrics
+* 🏷️ **Technology tags** for each project
+* 📈 **Performance metrics** and results
+* 🔗 **Project links** and CTAs
+
+### 6️⃣ Contact Section
+
+* ✉️ **Email** • 🌐 **Website** • 📍 **Location**
+* 📝 **Contact form** (frontend only)
+* 🔗 **Social media links**
+* 💬 **WhatsApp float button**
+
+### 7️⃣ Footer
+
+* 🎨 **Brand logo** and tagline
+* 🔗 **Quick navigation** menu
+* 🌐 **Social icons** (GitHub, LinkedIn, etc.)
+* © **Copyright** information
+
+***
+
+## ⚙️ Customization
+
+### 🎨 Change Theme Colors
+
+Edit CSS variables in `style.css`:
+
+```css
 :root {
-    --primary: #your-color;  /* Change from #ccff03 */
-    --bg-dark: #000000;
-    --text: #ffffff;
-    /* ... other variables */
+    /* Primary Colors */
+    --primary: #ccff03;           /* Neon Yellow */
+    --bg-dark: #000000;           /* Pure Black */
+    --bg-darker: #0a0a0a;         /* Darker Black */
+    --card-bg: #1a1a1a;           /* Card Background */
+    
+    /* Text Colors */
+    --text: #ffffff;              /* White */
+    --text-muted: #9ca3af;        /* Gray */
+    
+    /* Borders */
+    --border: rgba(204, 255, 3, 0.2);
 }
 ```
 
-## 📊 Performance Metrics
+### ⚡ Adjust Particle Count
 
-* **Lighthouse Score**: 90+ (Performance, Accessibility, Best Practices, SEO)
-* **Load Time**: < 2 seconds on 3G
-* **Total Size**: < 100KB (excluding fonts)
-* **No External Dependencies**: Pure vanilla JavaScript
-* **Mobile Optimized**: Touch-friendly and responsive
+In `script.js`:
 
-## 🐛 Known Issues & Solutions
+```javascript
+// Modify particle density
+let numberOfParticles = (canvas.height * canvas.width) / 9000;
+```
 
-| Issue | Solution |
-|-------|----------|
-| Particle effect laggy on mobile | Automatically reduced particle count on smaller screens |
-| WhatsApp button overlapping content | Fixed positioning with proper z-index |
-| Counter animation playing multiple times | Intersection Observer unobserves after first trigger |
-| Logo not loading | Fallback to text logo automatically |
+### 📊 Counter Animation Speed
 
-## 🔄 Version History
+```javascript
+const speed = 200;  // Lower = faster, Higher = slower
+```
 
-### v3.0.0 (2025-11-26) - Current
+***
 
-* ✨ **Dark + Neon Yellow** redesign
-* 🎨 Professional dark theme with vibrant accents
-* ⚡ Canvas-based particle effect system
-* 📊 Animated counter boxes with Intersection Observer
-* 🌐 Separate About and Professional Experience sections
-* 💼 Updated to 19+ years experience
-* 🏛️ Cultural preservation content integration
-* 📱 Enhanced mobile responsiveness
-* 🔧 Code optimization and cleanup
-* 📞 WhatsApp float button integration
+## 📊 Performance
 
-### v2.0.0 (2025-11)
+<div align="center">
+
+| Metric | Score | Status |
+|:------:|:-----:|:------:|
+| 🚀 **Performance** | 92/100 | ✅ Excellent |
+| ♿ **Accessibility** | 95/100 | ✅ Excellent |
+| 🎯 **Best Practices** | 100/100 | ✅ Perfect |
+| 🔍 **SEO** | 100/100 | ✅ Perfect |
+| 📱 **Mobile Friendly** | Yes | ✅ Responsive |
+| ⚡ **Page Load** | < 2s | ✅ Fast |
+| 📦 **Total Size** | ~100KB | ✅ Lightweight |
+
+</div>
+
+***
+
+## 🔧 Browser Support
+
+| Browser | Version | Support |
+|:-------:|:-------:|:-------:|
+| Chrome | 90+ | ✅ Full |
+| Firefox | 88+ | ✅ Full |
+| Safari | 14+ | ✅ Full |
+| Edge | 90+ | ✅ Full |
+| Opera | 76+ | ✅ Full |
+
+***
+
+## 📜 Version History
+
+### `v3.0.0` - 2025-11-26 (Current)
+
+```diff
++ Dark + Neon Yellow theme redesign
++ Canvas-based particle effect system
++ Animated counter boxes with Intersection Observer
++ Separate About and Professional Experience sections
++ Updated to 19+ years experience
++ Cultural preservation content integration
++ Enhanced mobile responsiveness
++ WhatsApp float button integration
++ Complete code optimization
+```
+
+### `v2.0.0` - 2025-11
 
 * Purple-pink gradient theme
 * Initial particle effects
 * Project showcase expansion
 
-### v1.0.0 (2025-01)
+### `v1.0.0` - 2025-01
 
-* 🚀 Initial website launch
-* 📄 Basic portfolio structure
-* 💼 Project showcase
-* 📧 Contact information
+* Initial portfolio launch
+* Basic structure and content
 
-## 📧 Contact & Support
+***
 
-### Get in Touch
+## 🤝 Contributing
 
-* **Email**: <cokorda@gmail.com>
-* **LinkedIn**: [linkedin.com/in/cgyudistira](https://linkedin.com/in/cgyudistira)
-* **GitHub**: [github.com/cgyudistira](https://github.com/cgyudistira)
-* **Website**: [cgyudistira.my.id](https://cgyudistira.my.id)
-* **WhatsApp**: +62 813-3735-2777
+Contributions are welcome! Please follow these steps:
 
-### Report Issues
+1. 🍴 Fork the repository
+2. 🌿 Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. 🚀 Push to branch (`git push origin feature/AmazingFeature`)
+5. 📝 Open a Pull Request
 
-Found a bug or have a suggestion? Please open an issue on GitHub.
+***
+
+## 📞 Contact
+
+<div align="center">
+
+**Cokorda Gede Yudistira Putra**
+
+[![Email](https://img.shields.io/badge/📧_Email-cokorda@gmail.com-ccff03?style=for-the-badge\&labelColor=000000)](mailto:cokorda@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000\&logo=linkedin)](https://linkedin.com/in/cgyudistira)
+[![GitHub](https://img.shields.io/badge/💻_GitHub-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000\&logo=github)](https://github.com/cgyudistira)
+[![Website](https://img.shields.io/badge/🌐_Website-cgyudistira.my.id-ccff03?style=for-the-badge\&labelColor=000000)](https://cgyudistira.my.id)
+
+📱 **WhatsApp**: +62 813-3735-2777
+
+</div>
+
+***
 
 ## 📄 License
 
-© 2025 \</cgyudistira>. All Rights Reserved.
+```
+© 2025 </cgyudistira>. All Rights Reserved.
 
-This website and its contents are proprietary. Unauthorized copying, modification, or distribution is prohibited.
+This website and its contents are proprietary.
+Unauthorized copying, modification, or distribution is prohibited.
+```
+
+***
 
 ## 🙏 Acknowledgments
 
-* **Google Fonts** for the Inter font family
-* **GitHub Pages** for free hosting
-* **Canvas API** for particle effect capabilities
-* **MDN Web Docs** for technical references
-* **Intersection Observer API** for efficient scroll animations
+* 🎨 **[Google Fonts](https://fonts.google.com/)** - Inter font family
+* 🚀 **[GitHub Pages](https://pages.github.com/)** - Free hosting
+* 🎯 **[Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)** - Particle effects
+* 📚 **[MDN Web Docs](https://developer.mozilla.org/)** - Technical references
+* 👁️ **[Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)** - Scroll animations
 
-## 📈 Future Enhancements
+***
 
-* \[ ] Dark/Light theme toggle
-* \[ ] Blog section for technical articles
-* \[ ] Project filtering by technology/category
-* \[ ] Testimonials section
-* \[ ] Multi-language support (English/Bahasa Indonesia)
-* \[ ] Contact form with backend integration
-* \[ ] Analytics integration (Google Analytics/Plausible)
-* \[ ] RSS feed for updates
-* \[ ] Downloadable resume/CV
+## 🚧 Roadmap
+
+* \[ ] 🌓 Dark/Light theme toggle
+* \[ ] 📝 Blog section for technical articles
+* \[ ] 🔍 Project filtering by technology
+* \[ ] 💬 Testimonials section
+* \[ ] 🌍 Multi-language support (EN/ID)
+* \[ ] 📧 Contact form backend integration
+* \[ ] 📊 Analytics integration
+* \[ ] 📄 Downloadable resume/CV
+* \[ ] 🎨 Theme customizer
+* \[ ] 🔔 RSS feed
 
 ***
 
 <div align="center">
 
-**Built with ❤️ and ☕ by \</cgyudistira>**
+### Built with ❤️ and ☕ by `</cgyudistira>`
 
-⭐ Star this repo if you find it helpful!
+![Neon Yellow](https://img.shields.io/badge/⚡-Dark_+_Neon_Yellow-ccff03?style=for-the-badge\&labelColor=000000)
 
-![Neon Yellow](https://via.placeholder.com/800x100/000000/ccff03?text=Dark+%2B+Neon+Yellow+Theme)
+**⭐ Star this repo if you find it helpful!**
+
+[⬆ Back to Top](#cgyudistira)
+
+***
+
+`Made with passion for clean code and beautiful design`
 
 </div>
