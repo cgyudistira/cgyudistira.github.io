@@ -4,16 +4,11 @@
 
 ### AI, Data & Automation Enthusiast
 
-[![Live Website](https://img.shields.io/badge/🌐_Live_Site-cgyudistira.github.io-ccff03?style=for-the-badge\&labelColor=000000)](https://cgyudistira.github.io)
-[![GitHub](https://img.shields.io/badge/💻_GitHub-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000)](https://github.com/cgyudistira)
+[![Live Website](https://img.shields.io/badge/🌐_Live_Site-cgyudistira.github.io-ccff03?style=for-the-badge\&labelColor=000000)](https://cgyudistira.github.io) [![GitHub](https://img.shields.io/badge/💻_GitHub-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000)](https://github.com/cgyudistira)
 
-![HTML5](https://img.shields.io/badge/HTML5-000000?style=flat-square\&logo=html5\&logoColor=ccff03)
-![CSS3](https://img.shields.io/badge/CSS3-000000?style=flat-square\&logo=css3\&logoColor=ccff03)
-![JavaScript](https://img.shields.io/badge/JavaScript-ccff03?style=flat-square\&logo=javascript\&logoColor=000000)
-![Responsive](https://img.shields.io/badge/Responsive-000000?style=flat-square\&logo=mobile\&logoColor=ccff03)
+![HTML5](https://img.shields.io/badge/HTML5-000000?style=flat-square\&logo=html5\&logoColor=ccff03) ![CSS3](https://img.shields.io/badge/CSS3-000000?style=flat-square\&logo=css3\&logoColor=ccff03) ![JavaScript](https://img.shields.io/badge/JavaScript-ccff03?style=flat-square\&logo=javascript\&logoColor=000000) ![Responsive](https://img.shields.io/badge/Responsive-000000?style=flat-square\&logo=mobile\&logoColor=ccff03)
 
-![Theme Preview](https://img.shields.io/badge/🎨_THEME-Dark_+_Neon_Yellow-ccff03?style=for-the-badge\&labelColor=000000)
-![Status](https://img.shields.io/badge/⚡_STATUS-Live_&_Optimized-ccff03?style=for-the-badge\&labelColor=000000)
+![Theme](https://img.shields.io/badge/🎨_THEME-Dark_+_Neon_Yellow-ccff03?style=for-the-badge\&labelColor=000000) ![Status](https://img.shields.io/badge/⚡_STATUS-Live_&_Optimized-ccff03?style=for-the-badge\&labelColor=000000)
 
 **Modern dark-themed portfolio showcasing 19+ years in Data Science, AI & Cultural Preservation**
 
@@ -107,25 +102,11 @@ cgyudistira.github.io/
 
 ### Color Palette
 
-<table>
-<tr>
-<td align="center" bgcolor="#ccff03">
-<strong>Neon Yellow</strong><br>
-<code>#ccff03</code><br>
-Primary Brand
-</td>
-<td align="center" bgcolor="#000000" style="color: white;">
-<strong>Pure Black</strong><br>
-<code>#000000</code><br>
-Background
-</td>
-<td align="center" bgcolor="#1a1a1a" style="color: white;">
-<strong>Dark Gray</strong><br>
-<code>#1a1a1a</code><br>
-Cards & Sections
-</td>
-</tr>
-</table>
+| Color | Hex | Usage |
+|:-----:|:---:|:------|
+| ![#ccff03](https://via.placeholder.com/30/ccff03/ccff03.png) **Neon Yellow** | `#ccff03` | Primary brand color |
+| ![#000000](https://via.placeholder.com/30/000000/000000.png) **Pure Black** | `#000000` | Main background |
+| ![#1a1a1a](https://via.placeholder.com/30/1a1a1a/1a1a1a.png) **Dark Gray** | `#1a1a1a` | Cards & sections |
 
 ### Typography
 
@@ -352,10 +333,7 @@ Contributions are welcome! Please follow these steps:
 
 **Cokorda Gede Yudistira Putra**
 
-[![Email](https://img.shields.io/badge/📧_Email-cokorda@gmail.com-ccff03?style=for-the-badge\&labelColor=000000)](mailto:cokorda@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000\&logo=linkedin)](https://linkedin.com/in/cgyudistira)
-[![GitHub](https://img.shields.io/badge/💻_GitHub-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000\&logo=github)](https://github.com/cgyudistira)
-[![Website](https://img.shields.io/badge/🌐_Website-cgyudistira.my.id-ccff03?style=for-the-badge\&labelColor=000000)](https://cgyudistira.my.id)
+[![Email](https://img.shields.io/badge/📧_Email-cokorda@gmail.com-ccff03?style=for-the-badge\&labelColor=000000)](mailto:cokorda@gmail.com) [![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000\&logo=linkedin)](https://linkedin.com/in/cgyudistira) [![GitHub](https://img.shields.io/badge/💻_GitHub-cgyudistira-ccff03?style=for-the-badge\&labelColor=000000\&logo=github)](https://github.com/cgyudistira) [![Website](https://img.shields.io/badge/🌐_Website-cgyudistira.my.id-ccff03?style=for-the-badge\&labelColor=000000)](https://cgyudistira.my.id)
 
 📱 **WhatsApp**: +62 813-3735-2777
 
