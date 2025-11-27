@@ -213,3 +213,156 @@ const aboutSection = document.querySelector('#about');
 if (aboutSection) {
     observer.observe(aboutSection);
 }
+
+// =========================================
+// CHAT WIDGET LOGIC
+// =========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const chatToggleBtn = document.getElementById('chat-toggle-btn');
+    const chatCloseBtn = document.getElementById('chat-close-btn');
+    const chatContainer = document.getElementById('chat-container');
+    const chatInput = document.getElementById('chat-input');
+    const chatSendBtn = document.getElementById('chat-send-btn');
+    const chatMessages = document.getElementById('chat-messages');
+
+    // Toggle Chat
+    function toggleChat() {
+        chatContainer.classList.toggle('hidden');
+        if (!chatContainer.classList.contains('hidden')) {
+            chatInput.focus();
+        }
+    }
+
+    if (chatToggleBtn) chatToggleBtn.addEventListener('click', toggleChat);
+    if (chatCloseBtn) chatCloseBtn.addEventListener('click', toggleChat);
+
+    // Auto-resize textarea
+    if (chatInput) {
+        chatInput.addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+            if (this.value === '') this.style.height = 'auto';
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    }
+
+    if (chatSendBtn) chatSendBtn.addEventListener('click', sendMessage);
+
+    // Send Message
+    async function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        // Add User Message
+        addMessage(message, 'user');
+        chatInput.value = '';
+        chatInput.style.height = 'auto';
+
+        // Show Typing Indicator
+        const typingId = showTypingIndicator();
+
+        try {
+            // Call Groq API
+            const response = await callGroqAPI(message);
+
+            // Remove Typing Indicator
+            removeTypingIndicator(typingId);
+
+            // Add AI Message
+            addMessage(response, 'ai');
+        } catch (error) {
+            removeTypingIndicator(typingId);
+            addMessage("Sorry, I encountered an error. Please check your API Key configuration in config.js.", 'ai');
+            console.error("Chat Error:", error);
+        }
+    }
+
+    // Add Message to UI
+    function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', `${sender}-message`);
+
+        // Simple text formatting (convert newlines to <br>)
+        // Also handle bolding **text** -> <b>text</b>
+        let formattedText = text.replace(/\n/g, '<br>');
+        formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
+        messageDiv.innerHTML = formattedText;
+
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Typing Indicator
+    function showTypingIndicator() {
+        const id = 'typing-' + Date.now();
+        const typingDiv = document.createElement('div');
+        typingDiv.classList.add('typing-indicator');
+        typingDiv.id = id;
+        typingDiv.innerHTML = `
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return id;
+    }
+
+    function removeTypingIndicator(id) {
+        const element = document.getElementById(id);
+        if (element) element.remove();
+    }
+
+    // Call Groq API
+    async function callGroqAPI(userMessage) {
+        if (typeof CONFIG === 'undefined' || !CONFIG.GROQ_API_KEY || CONFIG.GROQ_API_KEY.includes('YOUR_API_KEY')) {
+            throw new Error("API Key not configured");
+        }
+
+        const messages = [
+            { role: "system", content: CONFIG.SYSTEM_PROMPT },
+            { role: "user", content: (CONFIG.USER_PROMPT_PREFIX || "") + userMessage }
+        ];
+
+        console.log("Sending request to Groq API...");
+        console.log("Model:", CONFIG.GROQ_MODEL);
+
+        try {
+            const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${CONFIG.GROQ_API_KEY}`
+                },
+                body: JSON.stringify({
+                    messages: messages,
+                    model: CONFIG.GROQ_MODEL || "llama3-8b-8192",
+                    temperature: 0.7,
+                    max_tokens: 1024
+                })
+            });
+
+            console.log("Response status:", response.status);
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error("API Error Details:", errorData);
+                throw new Error(`API Error (${response.status}): ${errorData.error?.message || response.statusText}`);
+            }
+
+            const data = await response.json();
+            console.log("API Response:", data);
+            return data.choices[0]?.message?.content || "I'm not sure how to respond to that.";
+        } catch (error) {
+            console.error("Groq API Error:", error);
+            throw error;
+        }
+    }
+});
