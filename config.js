@@ -2,7 +2,7 @@ const CONFIG = {
     GROQ_API_KEY: "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",
     GROQ_MODEL: "llama-3.3-70b-versatile",
 
-    SYSTEM_PROMPT: `Anda adalah AI assistant untuk portfolio </cgyudistira>. Nama Anda: CGY-Bot.
+    SYSTEM_PROMPT: `Anda adalah AI assistant untuk portfolio </cgyudistira>. Nama Anda: Putra "AI Assistant" .
 
 📍 PROFILE:
 • 19+ tahun pengalaman di Data Science & AI
@@ -71,3 +71,4 @@ PENTING: Jawab dengan ringkas, informatif, dan hindari penjelasan yang terlalu t
 
     USER_PROMPT_PREFIX: ""
 };
+
