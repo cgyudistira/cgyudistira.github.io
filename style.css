@@ -1067,54 +1067,41 @@ img, svg {
 }
 
 @media (max-width: 1024px) {
-    /* Tablet styles */
-    .chat-container {
-        width: 90vw;
-        max-width: 500px;
-        height: 70vh;
-        max-height: 650px;
-        bottom: auto;
-        right: auto;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transform-origin: center;
-    }
-    
-    .chat-container.hidden {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.9);
-        pointer-events: none;
+    /* Tablet: Widget fullscreen centered, button stays bottom-right */
+    .chat-widget {
+        bottom: 30px;
+        right: 30px;
     }
     
     .chat-widget-btn {
         width: 65px;
         height: 65px;
     }
-}
-
-@media (max-width: 768px) {
-    /* Mobile landscape & portrait */
+    
     .chat-container {
-        width: 95vw;
-        max-width: 100%;
-        height: 80vh;
-        max-height: 100%;
-        top: 50%;
-        left: 50%;
-        right: auto;
-        bottom: auto;
-        transform: translate(-50%, -50%);
-        border-radius: 16px;
-        margin: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: none;
+        border-radius: 0;
+        border: none;
     }
     
     .chat-container.hidden {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(0.95);
+        transform: scale(0.95);
         pointer-events: none;
     }
-    
+}
+
+@media (max-width: 768px) {
+    /* Mobile: Widget fullscreen, button stays bottom-right */
     .chat-widget {
         bottom: 20px;
         right: 20px;
@@ -1124,11 +1111,9 @@ img, svg {
         width: 60px;
         height: 60px;
     }
-}
-
-@media (max-width: 480px) {
-    /* Small mobile devices */
+    
     .chat-container {
+        position: fixed;
         width: 100vw;
         height: 100vh;
         max-width: 100vw;
@@ -1147,7 +1132,10 @@ img, svg {
         transform: translateY(100%);
         pointer-events: none;
     }
-    
+}
+
+@media (max-width: 480px) {
+    /* Small mobile: same as above */
     .chat-widget {
         bottom: 20px;
         right: 20px;
