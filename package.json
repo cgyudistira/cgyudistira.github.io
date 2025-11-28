@@ -1,0 +1,6 @@
+{
+    "name": "cgyudistira-portfolio",
+    "version": "1.0.0",
+    "description": "Portfolio with secure chat API",
+    "type": "module"
+}
