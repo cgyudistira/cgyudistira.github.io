@@ -320,32 +320,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (element) element.remove();
     }
 
-    // Call Groq API
+    // Call Backend API (Vercel Serverless Function)
     async function callGroqAPI(userMessage) {
-        if (typeof CONFIG === 'undefined' || !CONFIG.GROQ_API_KEY || CONFIG.GROQ_API_KEY.includes('YOUR_API_KEY')) {
-            throw new Error("API Key not configured");
-        }
+        console.log("Sending request to backend API...");
 
-        const messages = [
-            { role: "system", content: CONFIG.SYSTEM_PROMPT },
-            { role: "user", content: (CONFIG.USER_PROMPT_PREFIX || "") + userMessage }
-        ];
-
-        console.log("Sending request to Groq API...");
-        console.log("Model:", CONFIG.GROQ_MODEL);
+        // Use Vercel backend URL in production
+        const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? '/api/chat'  // Local development
+            : 'https://cgyudistira-github-9gwmwjmc2-cgyudistira-project.vercel.app/api/chat';  // Production
 
         try {
-            const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+            // Call our secure backend proxy instead of Groq directly
+            const response = await fetch(API_URL, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${CONFIG.GROQ_API_KEY}`
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    messages: messages,
-                    model: CONFIG.GROQ_MODEL || "llama3-8b-8192",
-                    temperature: 0.7,
-                    max_tokens: 1024
+                    message: userMessage
                 })
             });
 
@@ -353,15 +345,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({}));
-                console.error("API Error Details:", errorData);
-                throw new Error(`API Error (${response.status}): ${errorData.error?.message || response.statusText}`);
+                console.error("Backend API Error:", errorData);
+                throw new Error(`API Error (${response.status}): ${errorData.error || response.statusText}`);
             }
 
             const data = await response.json();
-            console.log("API Response:", data);
+            console.log("API Response received");
             return data.choices[0]?.message?.content || "I'm not sure how to respond to that.";
         } catch (error) {
-            console.error("Groq API Error:", error);
+            console.error("Backend API Error:", error);
             throw error;
         }
     }
