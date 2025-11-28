@@ -325,9 +325,19 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Sending request to backend API...");
 
         // Use Netlify Function endpoint
-        const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-            ? '/.netlify/functions/chat'  // Local development with Netlify CLI
-            : '/.netlify/functions/chat';  // Production (same path on Netlify)
+        // For GitHub Pages, point to Netlify deployment URL
+        let API_URL;
+
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            // Local development with Netlify CLI
+            API_URL = '/.netlify/functions/chat';
+        } else if (window.location.hostname.includes('github.io')) {
+            // GitHub Pages - point to Netlify deployment
+            API_URL = 'https://astounding-meringue-11859b.netlify.app/.netlify/functions/chat';
+        } else {
+            // Netlify deployment
+            API_URL = '/.netlify/functions/chat';
+        }
 
         try {
             // Call our secure backend proxy instead of Groq directly
