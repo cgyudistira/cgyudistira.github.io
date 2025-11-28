@@ -1,11 +1,14 @@
 {
-  "github": {
-    "silent": true
+  "functions": {
+    "api/**/*.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "src": "/api/chat",
+      "dest": "/api/chat.js"
     }
   ],
   "headers": [
