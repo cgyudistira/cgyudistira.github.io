@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Use Vercel backend URL in production
         const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
             ? '/api/chat'  // Local development
-            : 'https://cgyudistira-github-nut2o9l8s-cgyudistira-project.vercel.app/api/chat';  // Production
+            : 'https://cgyudistira-github-oo4e9eay2-cgyudistira-project.vercel.app/api/chat';  // Production
 
         try {
             // Call our secure backend proxy instead of Groq directly
