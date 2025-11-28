@@ -320,14 +320,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (element) element.remove();
     }
 
-    // Call Backend API (Vercel Serverless Function)
+    // Call Backend API (Netlify Function)
     async function callGroqAPI(userMessage) {
         console.log("Sending request to backend API...");
 
-        // Use Vercel backend URL in production
+        // Use Netlify Function endpoint
         const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-            ? '/api/chat'  // Local development
-            : 'https://cgyudistira-github-oo4e9eay2-cgyudistira-project.vercel.app/api/chat';  // Production
+            ? '/.netlify/functions/chat'  // Local development with Netlify CLI
+            : '/.netlify/functions/chat';  // Production (same path on Netlify)
 
         try {
             // Call our secure backend proxy instead of Groq directly
