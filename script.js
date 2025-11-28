@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
             addMessage(response, 'ai');
         } catch (error) {
             removeTypingIndicator(typingId);
-            addMessage("Sorry, I encountered an error. Please check your API Key configuration in config.js.", 'ai');
+            addMessage("Sorry, I encountered an error connecting to the AI service. Please try again later.", 'ai');
             console.error("Chat Error:", error);
         }
     }
